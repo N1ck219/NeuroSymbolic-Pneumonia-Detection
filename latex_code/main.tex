@@ -858,7 +858,7 @@ The training phase of this hybrid architecture proved to be highly computational
 
 Despite these limitations, the proposed architecture successfully bridges the gap between robust low-level signal processing and high-level medical reasoning, paving the way for safer and more transparent AI screening tools in critical clinical triage environments.
 
-\clearpage
+\newpage
 
 \section*{Code Availability}
 To ensure full transparency and reproducibility of the experiments presented in this study, the complete and modular Python codebase has been made publicly available. The repository includes the neural network architectures, the multi-task training pipeline, the hardware profiling scripts, and the declarative Answer Set Programming (ASP) rules (.lp files) used for the neuro-symbolic semantic validation. 
@@ -874,21 +874,22 @@ During the preparation of this work, the author used Google Gemini to assist in 
 Finally, during the writing process, the author drafted the foundational structure of the manuscript in their native language, and Gemini was used to translate the text and refine the academic tone and phrasing. After using these tools, the author thoroughly reviewed and edited all contents as needed, and takes full and sole responsibility for the accuracy, originality, and integrity of the final publication.
 
 
-\clearpage 
+\newpage 
 
 \bibliographystyle{elsarticle-num} 
 \bibliography{cas-refs}
 
-\clearpage 
-	
+\clearpage
 \appendix
-\section{Detailed Noise Robustness Results}
-\label{sec:appendix_matrices}
 
 \begin{strip}
+	\section{Detailed Noise Robustness Results}
+	\label{sec:appendix_matrices}
+	
 	This appendix provides the comprehensive evaluation metrics, including AUC-ROC and MCC, and the detailed confusion matrices alongside their respective degradation trend lines for all the architectures tested during the noise robustness benchmarking.
+	
 	\vspace{1em}
-%	\centering
+	
 	\captionof{table}{Comprehensive Noise Robustness Metrics. Full evaluation including Precision, Recall, F1-Score, Specificity, AUC-ROC, and MCC across key Gaussian noise levels.}
 	\label{tab:noise_accuracy_extended}
 	\resizebox{\textwidth}{!}{%
@@ -932,10 +933,9 @@ Finally, during the writing process, the author drafted the foundational structu
 
 \clearpage
 
-% --- BLOCCO 1: ResNet e SE-ResNet ---
-\begin{figure*}[htbp]
+% --- BLOCCO FIGURE 1 ---
+\begin{figure*}[t]
 	\centering
-	% ResNet
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/ResNet50_CM.png}
@@ -947,9 +947,9 @@ Finally, during the writing process, the author drafted the foundational structu
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/ResNet50_Degradation.png}
 		\caption{ResNet50 - Metric Degradation}
 	\end{subfigure}
+	
 	\vspace{1.5em}
 	
-	% SE-ResNet
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/SE-ResNet50_CM.png}
@@ -960,13 +960,10 @@ Finally, during the writing process, the author drafted the foundational structu
 		\centering
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/SE-ResNet50_Degradation.png}
 		\caption{SE-ResNet50 - Metric Degradation}
-	\end{subfigure}	
-%\end{figure*}
-\vspace{1.5em}
-%\begin{figure*}[htbp]
-	\ContinuedFloat 
-	\centering
-	% EfficientNet
+	\end{subfigure} 
+	
+	\vspace{1.5em}
+	
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/EfficientNet-B0_CM.png}
@@ -980,11 +977,14 @@ Finally, during the writing process, the author drafted the foundational structu
 	\end{subfigure}
 	\caption{Detailed performance degradation and confusion matrices (Part 1).}
 	\label{fig:noise_comparison_p1}
-	\vspace{1.5em}
 \end{figure*}
 
-\begin{figure*}[htbp]
-	% Ablation
+\clearpage
+
+% --- BLOCCO FIGURE 2 ---
+\begin{figure*}[t]
+	\ContinuedFloat 
+	\centering
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png}
@@ -996,13 +996,9 @@ Finally, during the writing process, the author drafted the foundational structu
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradation.png}
 		\caption{Ablation (No CeNN) - Metric Degradation}
 	\end{subfigure}
-	\vspace{1.5em}	
-%\end{figure*}
-
-%\begin{figure*}[htbp]
-	\ContinuedFloat 
-	\centering
-	% Proposed
+	
+	\vspace{1.5em}
+	
 	\begin{subfigure}{0.48\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png}
@@ -1014,10 +1010,8 @@ Finally, during the writing process, the author drafted the foundational structu
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.png}
 		\caption{Proposed Hybrid CeNN - Metric Degradation}
 	\end{subfigure}
-%	\caption{Detailed performance degradation and confusion matrices (Part 2).}
 	\caption{Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures.}
 	\label{fig:noise_comparison_p2}
 \end{figure*}
 
-				
 \end{document}
