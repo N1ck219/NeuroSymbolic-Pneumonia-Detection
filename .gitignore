@@ -38,5 +38,4 @@ desktop.ini
 stage_2_train_images/
 stage_2_train_labels.csv
 
-# Se vuoi ignorare tutti i risultati generati automaticamente e le immagini (decommenta la riga sotto)
-# results/
+!latex_code/thumbnails/*.jpeg

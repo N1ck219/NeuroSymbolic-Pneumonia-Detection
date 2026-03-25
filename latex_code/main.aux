@@ -108,34 +108,34 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Localization Accuracy and Metric Recontextualization}{11}{subsection.9.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Impact of Semantic Validation (Neuro-Symbolic ASP)}{11}{subsection.9.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.1}Configuration A: Zone-Aware Logic (Smart Heart)}{11}{subsubsection.9.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance of the Zone-Aware (Smart Heart) ASP configuration compared to the raw neural network at the baseline 0.5 threshold.}}{11}{figure.12}\protected@file@percent }
+\newlabel{fig:asp_smart_heart}{{12}{11}{Performance of the Zone-Aware (Smart Heart) ASP configuration compared to the raw neural network at the baseline 0.5 threshold}{figure.12}{}}
 \citation{he2016deep}
 \citation{hu2018squeeze}
 \citation{tan2019efficientnet}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance of the Zone-Aware (Smart Heart) ASP configuration compared to the raw neural network at the baseline 0.5 threshold.}}{12}{figure.12}\protected@file@percent }
-\newlabel{fig:asp_smart_heart}{{12}{12}{Performance of the Zone-Aware (Smart Heart) ASP configuration compared to the raw neural network at the baseline 0.5 threshold}{figure.12}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.2}Configuration B: Shape-Based Rescue (Organic)}{12}{subsubsection.9.3.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance of the Shape-Based (Organic) ASP configuration. Prioritizing biological shape plausibility drastically reduces False Negatives.}}{12}{figure.13}\protected@file@percent }
 \newlabel{fig:asp_organic}{{13}{12}{Performance of the Shape-Based (Organic) ASP configuration. Prioritizing biological shape plausibility drastically reduces False Negatives}{figure.13}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {10}Comparative Analysis and Noise Robustness Benchmarking}{12}{section.10}\protected@file@percent }
 \newlabel{sec:comparative_analysis}{{10}{12}{Comparative Analysis and Noise Robustness Benchmarking}{section.10}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Evaluated Architectures and Training Setup}{12}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Experimental Setup}{12}{subsection.10.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comprehensive performance comparison across different classification strategies on the full test dataset. The Neuro-Symbolic (Organic) approach maximizes Recall and minimizes False Negatives, making it the safest configuration for clinical screening.}}{13}{table.caption.5}\protected@file@percent }
 \newlabel{tab:master_results}{{2}{13}{Comprehensive performance comparison across different classification strategies on the full test dataset. The Neuro-Symbolic (Organic) approach maximizes Recall and minimizes False Negatives, making it the safest configuration for clinical screening}{table.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Experimental Setup}{13}{subsection.10.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Results and Discussion}{13}{subsection.10.3}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Performance degradation of the evaluated architectures under increasing levels of Gaussian noise.}}{13}{figure.14}\protected@file@percent }
 \newlabel{fig:noise_line_chart}{{14}{13}{Performance degradation of the evaluated architectures under increasing levels of Gaussian noise}{figure.14}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {11}Computational Efficiency and Inference Times}{13}{section.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Training Phase}{13}{subsection.11.1}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images).}}{14}{table.caption.6}\protected@file@percent }
 \newlabel{tab:inference_raw}{{3}{14}{Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images)}{table.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Training Phase}{14}{subsection.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Inference Phase and ASP Overhead}{14}{subsection.11.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Computational time breakdown for the complete Neuro-Symbolic pipeline (NN + ASP) evaluated on a 1,000-image subset.}}{14}{table.caption.7}\protected@file@percent }
 \newlabel{tab:inference_hybrid}{{4}{14}{Computational time breakdown for the complete Neuro-Symbolic pipeline (NN + ASP) evaluated on a 1,000-image subset}{table.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Inference Phase and ASP Overhead}{14}{subsection.11.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Model Complexity and Hardware Footprint}{14}{subsection.11.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12}Discussion and Limitations}{14}{section.12}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4.}}{15}{table.caption.8}\protected@file@percent }
-\newlabel{tab:hardware_metrics}{{5}{15}{Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4}{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Hardware complexity, inference times, and extended performance metrics (AUC-ROC, MCC) evaluated at a resolution of 512x512 with a batch size of 4.}}{15}{table.caption.8}\protected@file@percent }
+\newlabel{tab:hardware_metrics}{{5}{15}{Hardware complexity, inference times, and extended performance metrics (AUC-ROC, MCC) evaluated at a resolution of 512x512 with a batch size of 4}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Discussion and Limitations}{15}{section.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.1}The Clinical Trade-off: Statistical Thresholding vs. Neuro-Symbolic Rescue}{15}{subsection.12.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Computational Overhead}{15}{subsection.12.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.3}Generalization and Rule Engineering}{15}{subsection.12.3}\protected@file@percent }
@@ -163,24 +163,13 @@
 \bibcite{tan2019efficientnet}{{13}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Detailed Noise Robustness Results}{20}{appendix.A}\protected@file@percent }
 \newlabel{sec:appendix_matrices}{{A}{20}{Detailed Noise Robustness Results}{appendix.A}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model Accuracy across increasing levels of Gaussian Noise. \textit  {Note: These benchmarks were conducted on a representative subset of the test data to accommodate the computational overhead of multi-level noise injection; baseline values (0\%) may therefore differ slightly from full-dataset results in Table \ref {tab:master_results}.}}}{20}{table.6}\protected@file@percent }
-\newlabel{tab:noise_accuracy}{{6}{20}{Model Accuracy across increasing levels of Gaussian Noise. \textit {Note: These benchmarks were conducted on a representative subset of the test data to accommodate the computational overhead of multi-level noise injection; baseline values (0\%) may therefore differ slightly from full-dataset results in Table \ref {tab:master_results}.}}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Comprehensive Noise Robustness Metrics. Full evaluation including Precision, Recall, F1-Score, Specificity, AUC-ROC, and MCC across key Gaussian noise levels.}}{20}{table.6}\protected@file@percent }
+\newlabel{tab:noise_accuracy_extended}{{6}{20}{Comprehensive Noise Robustness Metrics. Full evaluation including Precision, Recall, F1-Score, Specificity, AUC-ROC, and MCC across key Gaussian noise levels}{table.6}{}}
 \csxdef{lastpage}{21}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\newlabel{fig:sub_resnet}{{16a}{21}{ResNet (Standard)}{figure.caption.13}{}}
-\newlabel{sub@fig:sub_resnet}{{a}{21}{ResNet (Standard)}{figure.caption.13}{}}
-\newlabel{fig:sub_seresnet}{{16b}{21}{SE-ResNet}{figure.caption.13}{}}
-\newlabel{sub@fig:sub_seresnet}{{b}{21}{SE-ResNet}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance.}}{21}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:noise_comparison_p1}{{16}{21}{Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance}{figure.caption.13}{}}
-\newlabel{fig:sub_efficientnet}{{16c}{22}{EfficientNet-B0}{figure.caption.14}{}}
-\newlabel{sub@fig:sub_efficientnet}{{c}{22}{EfficientNet-B0}{figure.caption.14}{}}
-\newlabel{fig:sub_nocenn}{{16d}{22}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
-\newlabel{sub@fig:sub_nocenn}{{d}{22}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 2).}}{22}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:noise_comparison_p2}{{16}{22}{Detailed Confusion Matrices across different architectures (Part 2)}{figure.caption.14}{}}
-\newlabel{fig:sub_nostro}{{16e}{23}{Proposed Hybrid CeNN}{figure.caption.15}{}}
-\newlabel{sub@fig:sub_nostro}{{e}{23}{Proposed Hybrid CeNN}{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 3)}}{23}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:noise_comparison_p3}{{16}{23}{Detailed Confusion Matrices across different architectures (Part 3)}{figure.caption.15}{}}
-\gdef \@abspage@last{23}
+\newlabel{fig:noise_comparison_p1}{{\caption@xref {fig:noise_comparison_p1}{ on input line 964}}{21}{Detailed Noise Robustness Results}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed performance degradation and confusion matrices (Part 1).}}{21}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:noise_comparison_p2}{{\caption@xref {fig:noise_comparison_p2}{ on input line 1001}}{22}{Detailed Noise Robustness Results}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures.}}{22}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:noise_comparison_p3}{{17}{22}{Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures}{figure.caption.14}{}}
+\gdef \@abspage@last{22}

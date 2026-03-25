@@ -6,8 +6,10 @@ import torch
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # --- PATHS ---
-CSV_PATH = r"../RSNA/stage_2_train_labels.csv"
-TRAIN_IMG_PATH = r"../RSNA/stage_2_train_images"
+# CSV_PATH = r"../RSNA/stage_2_train_labels.csv"
+# TRAIN_IMG_PATH = r"../RSNA/stage_2_train_images"
+CSV_PATH = "C:/Users/Nicol/OneDrive - Università degli Studi di Udine/UniversitaOneDrive/Università 5 OneDrive/OneDriveSmallProject/CeNN-RSNA/RSNA/stage_2_train_labels.csv"
+TRAIN_IMG_PATH = 'C:/Users/Nicol/OneDrive - Università degli Studi di Udine/UniversitaOneDrive/Università 5 OneDrive/OneDriveSmallProject/CeNN-RSNA/RSNA/stage_2_train_images'
 
 # --- MODELS DIRECTORY SETUP ---
 MODELS_DIR = os.path.join("..", "trained_models")

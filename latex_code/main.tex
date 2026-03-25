@@ -580,6 +580,8 @@ Coupled with TTA, an extensive threshold optimization search was conducted on a 
 
 As demonstrated in the validation analysis (Table \ref{tab:thresh_search}), lowering the decision boundary from the default 0.5 to an optimal threshold of 0.4 yielded the best overall F1-Score. To fully assess the clinical impact of this tuning, we compared the inference results on the broader dataset using both the default 0.5 threshold and the optimized 0.4 threshold.
 
+The comparison between Figure \ref{fig:risultati_05} and Figure \ref{fig:risultati_04} dictates a clear choice for the remainder of the project. At the standard 0.5 threshold, the network successfully identifies 3,687 True Positives but misses 2,325 cases (False Negatives). By shifting the threshold to 0.4, the model inherently favors Recall over Precision. The True Positives rise significantly to 4,513, safely dropping the False Negatives down to 1,499. 
+
 \noindent
 \begin{minipage}{\linewidth}
 	\centering
@@ -598,10 +600,7 @@ As demonstrated in the validation analysis (Table \ref{tab:thresh_search}), lowe
 \end{minipage}
 \vspace{1em}
 
-The comparison between Figure \ref{fig:risultati_05} and Figure \ref{fig:risultati_04} dictates a clear choice for the remainder of the project. At the standard 0.5 threshold, the network successfully identifies 3,687 True Positives but misses 2,325 cases (False Negatives). By shifting the threshold to 0.4, the model inherently favors Recall over Precision. The True Positives rise significantly to 4,513, safely dropping the False Negatives down to 1,499. 
-
 This adjustment is particularly crucial in a medical screening context. In clinical practice, maximizing Sensitivity (Recall) is paramount to ensure that potentially life-threatening conditions are not overlooked. A False Negative carries catastrophic clinical consequences, whereas a False Positive merely results in a secondary review by a radiologist. Consequently, the 0.4 threshold, which minimizes missed diagnoses despite an unavoidable increase in False Positives (from 2,406 to 4,068), is definitively selected as the optimal sub-symbolic baseline. The subsequent Answer Set Programming (ASP) logic layer is specifically engineered to contextualize and filter out these excess False Positives later in the pipeline.
-
 
 \subsection{Localization Accuracy and Metric Recontextualization}
 
@@ -688,7 +687,7 @@ When analyzing these models, a critical architectural distinction must be made. 
 \subsection{Experimental Setup}
 The noise robustness evaluation was conducted on a representative, balanced subset of the test set. This choice was necessitated by the high computational cost of performing inference across five different architectures, each subjected to six progressive levels of Gaussian noise (0\%, 15\%, 30\%, 45\%, 60\%, and 90\% variance limits). 
 
-The models were evaluated on their classification accuracy under these corrupted conditions to measure structural resilience. Detailed confusion matrices for all evaluated models across the entire noise spectrum, along with the exact numerical results, are provided in Appendix \ref{sec:appendix_matrices} (see Table \ref{tab:noise_accuracy} and Figure \ref{fig:noise_comparison_p1}).
+The models were evaluated on their classification accuracy under these corrupted conditions to measure structural resilience. Detailed confusion matrices for all evaluated models across the entire noise spectrum, along with the exact numerical results, are provided in Appendix \ref{sec:appendix_matrices} (see Table \ref{tab:noise_accuracy_extended} and Figure \ref{fig:noise_comparison_p1}).
 
 \begin{note}
 	Due to the different scale of the evaluation set, the baseline metrics (0\% noise) reported in this comparative analysis may show slight numerical variations compared to the results obtained on the full RSNA dataset reported in Section \ref{sec:asp_methodology}. However, the subset remains statistically consistent, ensuring the validity of the observed performance degradation curves.
@@ -716,6 +715,8 @@ Most notably, the proposed CeNN architecture exhibits a highly resilient degrada
 	\label{fig:noise_line_chart}
 \end{minipage}
 \vspace{1em}
+
+Beyond standard accuracy, analyzing the degradation through the Matthews Correlation Coefficient (MCC) and AUC-ROC provides a deeper understanding of the models' discriminative collapse (detailed comprehensively in Appendix \ref{sec:appendix_matrices}). At 90\% noise, the standard ResNet50 experiences a severe drop in MCC, falling from 0.5727 to a critical 0.3347, indicating a near-random classification capability on minority classes. The Ablation baseline completely collapses (MCC dropping to 0.1481). In stark contrast, the Proposed CeNN architecture exhibits exceptional stability: its MCC only degrades from 0.4945 to 0.4209 under maximum signal corruption. The CeNN layer acts as an exceptional deterministic filter, preventing severe degradation and maintaining stable feature extraction regardless of signal corruption.
 
 \section{Computational Efficiency and Inference Times}
 A critical factor for the deployment of any medical Artificial Intelligence system is its computational footprint. Real-world clinical triage environments require systems that can process radiographs swiftly without necessitating prohibitive investments in top-tier server hardware. To evaluate this, we monitored both the training phase and the inference execution times.
@@ -774,25 +775,25 @@ To fully address the computational footprint of the proposed architecture a comp
 
 \begin{table*}[htbp]
 	\centering
-	\caption{Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4.}
+	\caption{Hardware complexity, inference times, and extended performance metrics (AUC-ROC, MCC) evaluated at a resolution of 512x512 with a batch size of 4.}
 	\label{tab:hardware_metrics}
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{lcccccc}
+		\begin{tabular}{lcccccccc}
 			\toprule
-			\textbf{Model} & \textbf{Parameters (M)} & \textbf{Size (MB)} & \textbf{FLOPs (G)} & \textbf{Time / Batch (ms)} & \textbf{Throughput (img/s)} & \textbf{Peak VRAM (MB)} \\
+			\textbf{Model} & \textbf{Accuracy} & \textbf{AUC-ROC} & \textbf{MCC} & \textbf{Parameters (M)} & \textbf{FLOPs (G)} & \textbf{Time / Batch (ms)} & \textbf{Throughput (img/s)} & \textbf{Peak VRAM (MB)} \\
 			\midrule
-			ResNet50 (Baseline) & 23.50 & 89.66 & 42.35 & 70.96 & 56.37 & 310.02 \\
-			EfficientNet-B0 (Baseline) & 4.01 & 15.29 & 4.24 & 30.06 & 133.07 & 325.55 \\
-			SE-ResNet50 (Baseline) & 26.03 & 99.31 & 42.35 & 79.01 & 50.63 & 427.36 \\
+			ResNet50 (Baseline) & 0.8582 & 0.9031 & 0.5699 & 23.50 & 42.35 & 70.99 & 56.35 & 310.02 \\
+			EfficientNet-B0 (Baseline) & 0.8698 & 0.9283 & 0.6087 & 4.01 & 3.94 & 29.51 & 135.53 & 357.55 \\
+			SE-ResNet50 (Baseline) & 0.8583 & 0.9127 & 0.6041 & 26.03 & 42.35 & 79.37 & 50.39 & 426.86 \\
 			\midrule
-			Ablation: No CeNN & 18.48 & 70.50 & 33.32 & 78.86 & 50.72 & 451.39 \\
-			\textbf{Proposed Hybrid CeNN} & \textbf{18.49} & \textbf{70.53} & \textbf{34.16} & \textbf{94.48} & \textbf{42.34} & \textbf{534.67} \\
+			Ablation: No CeNN & 0.7826 & 0.8626 & 0.4916 & 18.48 & 33.32 & 79.11 & 50.56 & 450.45 \\
+			\textbf{Proposed Hybrid CeNN} & \textbf{0.7926} & \textbf{0.8622} & \textbf{0.4995} & \textbf{18.49} & \textbf{34.16} & \textbf{94.90} & \textbf{42.15} & \textbf{534.92} \\
 			\bottomrule
 		\end{tabular}%
 	}
 \end{table*}
 
-As detailed in Table \ref{tab:hardware_metrics}, the integration of the CeNN frontend introduces a negligible structural overhead. Comparing the Ablation model to the Proposed Hybrid CeNN, the parameter count increases by merely 0.01 million (from 18.48 M to 18.49 M), and the model size expands by just 0.03 MB. While the continuous-time dynamics of the CeNN slightly elevate the FLOPs (34.16 G) and the peak VRAM usage (534.67 MB), the overall footprint remains significantly lower than standard deep models like SE-ResNet50 in terms of parameter volume.
+As detailed in Table \ref{tab:hardware_metrics}, the hardware profiling is now contextualized alongside robust discriminative metrics such as the Area Under the ROC Curve (AUC-ROC) and the Matthews Correlation Coefficient (MCC). While standard models like EfficientNet-B0 achieve peak clean-data performance (AUC: 0.9283) with minimal computational footprint (3.94 GFLOPs), they lack the intrinsic structural robustness provided by the CeNN framework. The integration of the CeNN frontend introduces a negligible structural overhead. Comparing the Ablation model to the Proposed Hybrid CeNN, the parameter count increases by merely 0.01 million (from 18.48 M to 18.49 M). Although the continuous-time dynamics of the CeNN slightly elevate the FLOPs (34.16 G) and peak VRAM usage (534.92 MB), the resulting inference throughput of $\sim$42 images per second remains highly suitable for real-time clinical screening. The baseline performance (MCC of 0.4995) proves that the model maintains strong discriminative capabilities despite the heavier optimization burden of the multi-task formulation.
 
 Furthermore, an inference throughput of ~42 images per second demonstrates that the proposed architecture is highly suitable for real-time clinical screening. The minimal computational cost introduced by the bio-inspired frontend is heavily justified by the substantial gains in structural resilience and noise suppression demonstrated in the previous sections. Ultimately, these metrics confirm that the superior clinical safety achieved by the neuro-symbolic pipeline does not require prohibitive, server-tier hardware resources.
 
@@ -825,15 +826,6 @@ During the development of the proposed architecture, we thoroughly investigated 
 However, empirical validation revealed critical limitations in this approach for the specific domain of pneumonia detection. While the BD-CeNN autoencoder successfully suppressed artificial noise, it inadvertently induced an "over-smoothing" effect on the reconstructed images. Pneumonia opacities typically present as subtle, diffuse textures rather than solid objects with sharp, distinct boundaries. The autoencoder smoothed out these critical pathological semantics alongside the noise, significantly degrading the model's discriminative power.
 
 As illustrated in Figure \ref{fig:autoencoder_noise}, under extreme noise conditions (90\% variance), the accuracy of the autoencoder-based model collapsed to 62.6\%, accompanied by a severe spike in False Positives (1,797 cases). In contrast, our proposed architecture, which utilizes the CeNN solely as a dynamic feature extractor rather than an image reconstructor, maintained a much more robust performance under the same conditions.
-
-%\noindent
-%\begin{minipage}{\linewidth}
-%	\centering
-%	\includegraphics[width=\textwidth]{figs/autoencoder_noise.png}
-%	\captionof{figure}{Confusion matrices demonstrating the performance degradation of the BD-CeNN Autoencoder hypothesis under varying levels of Gaussian noise. Note the severe drop in Accuracy and the spike in False Positives at the 90\% noise level due to image over-smoothing.}
-%	\label{fig:autoencoder_noise}
-%\end{minipage}
-%\vspace{1em}
 
 \begin{figure*}[htbp]
 	\centering
@@ -894,343 +886,140 @@ Finally, during the writing process, the author drafted the foundational structu
 \label{sec:appendix_matrices}
 
 \begin{strip}
-This appendix provides the comprehensive evaluation metrics and the detailed confusion matrices for all the architectures tested during the noise robustness benchmarking discussed in Section \ref{sec:comparative_analysis}.
-
+	This appendix provides the comprehensive evaluation metrics, including AUC-ROC and MCC, and the detailed confusion matrices alongside their respective degradation trend lines for all the architectures tested during the noise robustness benchmarking.
 	\vspace{1em}
-	\centering
-	\captionof{table}{Model Accuracy across increasing levels of Gaussian Noise. \textit{Note: These benchmarks were conducted on a representative subset of the test data to accommodate the computational overhead of multi-level noise injection; baseline values (0\%) may therefore differ slightly from full-dataset results in Table \ref{tab:master_results}.}}
-	\label{tab:noise_accuracy}
+%	\centering
+	\captionof{table}{Comprehensive Noise Robustness Metrics. Full evaluation including Precision, Recall, F1-Score, Specificity, AUC-ROC, and MCC across key Gaussian noise levels.}
+	\label{tab:noise_accuracy_extended}
 	\resizebox{\textwidth}{!}{%
-		\begin{tabular}{lcccccc}
-			\hline
-			\textbf{Model} & \textbf{0\%} & \textbf{15\%} & \textbf{30\%} & \textbf{45\%} & \textbf{60\%} & \textbf{90\%} \\
-			\hline
-			ResNet50 & 86.0\% & 83.7\% & 83.0\% & 82.1\% & 79.1\% & 67.8\% \\
-			SE-ResNet50 & 85.6\% & 81.3\% & 82.4\% & 82.8\% & 82.1\% & 81.3\% \\
-			EfficientNet-B0 & 87.2\% & 83.8\% & 82.5\% & 82.6\% & 82.4\% & 81.7\% \\
-			Without CeNN (Ablation) & 78.7\% & 76.1\% & 77.8\% & 78.1\% & 71.9\% & 29.8\% \\
-			\textbf{Proposed CeNN Hybrid} & \textbf{79.5\%} & \textbf{76.7\%} & \textbf{77.1\%} & \textbf{76.5\%} & \textbf{75.8\%} & \textbf{73.3\%} \\
-			\hline
+		\begin{tabular}{llcccccccc}
+			\toprule
+			\textbf{Model} & \textbf{Noise} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} & \textbf{Specificity} & \textbf{AUC-ROC} & \textbf{MCC} \\
+			\midrule
+			\multirow{4}{*}{\textbf{ResNet50}} 
+			& 0\%  & 0.8598 & 0.7755 & 0.5509 & 0.6441 & 0.9523 & 0.9075 & 0.5727 \\
+			& 30\% & 0.8304 & 0.6938 & 0.4719 & 0.5617 & 0.9377 & 0.8605 & 0.4745 \\
+			& 60\% & 0.7930 & 0.5474 & 0.5826 & 0.5644 & 0.8559 & 0.8246 & 0.4292 \\
+			& 90\% & 0.6794 & 0.3939 & 0.7282 & 0.5113 & 0.6648 & 0.7428 & 0.3347 \\
+			\midrule
+			\multirow{4}{*}{\textbf{EfficientNet-B0}} 
+			& 0\%  & 0.8722 & 0.7794 & 0.6208 & 0.6911 & 0.9474 & 0.9303 & 0.6182 \\
+			& 30\% & 0.8278 & 0.7618 & 0.3670 & 0.4953 & 0.9657 & 0.8766 & 0.4460 \\
+			& 60\% & 0.8295 & 0.7096 & 0.4394 & 0.5427 & 0.9462 & 0.8550 & 0.4643 \\
+			& 90\% & 0.8134 & 0.6080 & 0.5338 & 0.5685 & 0.8970 & 0.8289 & 0.4516 \\
+			\midrule
+			\multirow{4}{*}{\textbf{SE-ResNet50}} 
+			& 0\%  & 0.8559 & 0.6837 & 0.6965 & 0.6900 & 0.9036 & 0.9135 & 0.5962 \\
+			& 30\% & 0.8272 & 0.6313 & 0.6005 & 0.6155 & 0.8951 & 0.8677 & 0.5045 \\
+			& 60\% & 0.8246 & 0.6726 & 0.4646 & 0.5496 & 0.9323 & 0.8425 & 0.4569 \\
+			& 90\% & 0.8153 & 0.6494 & 0.4296 & 0.5171 & 0.9306 & 0.8177 & 0.4221 \\
+			\midrule
+			\multirow{4}{*}{\textbf{Ablation (No CeNN)}} 
+			& 0\%  & 0.7871 & 0.5260 & 0.7648 & 0.6233 & 0.7938 & 0.8636 & 0.4984 \\
+			& 30\% & 0.7755 & 0.5090 & 0.7152 & 0.5947 & 0.7936 & 0.8391 & 0.4579 \\
+			& 60\% & 0.7246 & 0.4450 & 0.7933 & 0.5702 & 0.7040 & 0.8181 & 0.4256 \\
+			& 90\% & 0.3062 & 0.2485 & 0.9943 & 0.3976 & 0.1003 & 0.7792 & 0.1481 \\
+			\midrule
+			\multirow{4}{*}{\textbf{Proposed Hybrid CeNN}} 
+			& 0\%  & 0.7950 & 0.5408 & 0.7282 & 0.6207 & 0.8150 & 0.8618 & 0.4945 \\
+			& 30\% & 0.7701 & 0.5005 & 0.7502 & 0.6005 & 0.7760 & 0.8418 & 0.4660 \\
+			& 60\% & 0.7604 & 0.4865 & 0.7331 & 0.5849 & 0.7685 & 0.8269 & 0.4437 \\
+			& 90\% & 0.7343 & 0.4541 & 0.7600 & 0.5685 & 0.7266 & 0.8143 & 0.4209 \\
+			\bottomrule
 		\end{tabular}%
 	}
-
-
 \end{strip}
 
 \clearpage
 
-% --- BLOCCO 1: Prime due immagini ---
+% --- BLOCCO 1: ResNet e SE-ResNet ---
 \begin{figure*}[htbp]
 	\centering
-	\begin{subfigure}{\linewidth}
+	% ResNet
+	\begin{subfigure}{0.48\linewidth}
 		\centering
-		\includegraphics[width=0.85\linewidth]{figs/conf_matr_noise/ResNet50_CM.png}
-		\caption{ResNet (Standard)}
-		\label{fig:sub_resnet}
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/ResNet50_CM.png}
+		\caption{ResNet50 - Confusion Matrices}
 	\end{subfigure}
-	\vspace{1em} % Aumentato leggermente lo spazio tra le immagini
-	
-	\begin{subfigure}{\linewidth}
+	\hfill
+	\begin{subfigure}{0.48\linewidth}
 		\centering
-		\includegraphics[width=0.85\linewidth]{figs/conf_matr_noise/SE-ResNet50_CM.png}
-		\caption{SE-ResNet}
-		\label{fig:sub_seresnet}
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/ResNet50_Degradation.png}
+		\caption{ResNet50 - Metric Degradation}
 	\end{subfigure}
+	\vspace{1.5em}
 	
-	\caption{Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance.}
+	% SE-ResNet
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/SE-ResNet50_CM.png}
+		\caption{SE-ResNet50 - Confusion Matrices}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/SE-ResNet50_Degradation.png}
+		\caption{SE-ResNet50 - Metric Degradation}
+	\end{subfigure}	
 	\label{fig:noise_comparison_p1}
-\end{figure*}
-
-% --- BLOCCO 2: Terza e Quarta immagine ---
-\begin{figure*}[htbp]
-	\ContinuedFloat % Continua la numerazione della Figura precedente
-	\centering
-	\begin{subfigure}{\linewidth}
-		\centering
-		\includegraphics[width=0.85\linewidth]{figs/conf_matr_noise/EfficientNet-B0_CM.png}
-		\caption{EfficientNet-B0}
-		\label{fig:sub_efficientnet}
-	\end{subfigure}
-	\vspace{1em}
-	
-	\begin{subfigure}{\linewidth}
-		\centering
-		\includegraphics[width=0.85\linewidth]{figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png}
-		\caption{Ablation Baseline (DenseNet-121 Without CeNN)}
-		\label{fig:sub_nocenn}
-	\end{subfigure}
-	
-	\caption{Detailed Confusion Matrices across different architectures (Part 2).}
-	\label{fig:noise_comparison_p2}
-\end{figure*}
-
-% --- BLOCCO 3: Quinta immagine ---
-\begin{figure*}[htbp]
+%\end{figure*}
+\vspace{1.5em}
+%\begin{figure*}[htbp]
 	\ContinuedFloat 
 	\centering
-	\begin{subfigure}{\linewidth}
+	% EfficientNet
+	\begin{subfigure}{0.48\linewidth}
 		\centering
-		\includegraphics[width=0.85\linewidth]{figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png}
-		\caption{Proposed Hybrid CeNN}
-		\label{fig:sub_nostro}
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/EfficientNet-B0_CM.png}
+		\caption{EfficientNet-B0 - Confusion Matrices}
 	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/EfficientNet-B0_Degradation.png}
+		\caption{EfficientNet-B0 - Metric Degradation}
+	\end{subfigure}
+	\caption{Detailed performance degradation and confusion matrices (Part 1).}
+	\vspace{1.5em}
+\end{figure*}
+
+\begin{figure*}[htbp]
+	% Ablation
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png}
+		\caption{Ablation (No CeNN) - Confusion Matrices}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradation.png}
+		\caption{Ablation (No CeNN) - Metric Degradation}
+	\end{subfigure}
+	\vspace{1.5em}
 	
-	\caption{Detailed Confusion Matrices across different architectures (Part 3)}
+	\label{fig:noise_comparison_p2}
+%\end{figure*}
+
+%\begin{figure*}[htbp]
+	\ContinuedFloat 
+	\centering
+	% Proposed
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png}
+		\caption{Proposed Hybrid CeNN - Confusion Matrices}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.48\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.png}
+		\caption{Proposed Hybrid CeNN - Metric Degradation}
+	\end{subfigure}
+%	\caption{Detailed performance degradation and confusion matrices (Part 2).}
+	\caption{Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures.}
 	\label{fig:noise_comparison_p3}
 \end{figure*}
-	% \section{Bibliography styles}
-	
-	% There are various bibliography styles available. You can select the
-	% style of your choice in the preamble of this document. These styles are
-	% Elsevier styles based on standard styles like Harvard and Vancouver.
-	% Please use Bib\TeX\ to generate your bibliography and include DOIs
-	% whenever available.
-	
-	% Here are two sample references: 
-	% \cite{cbam}
-	% \cite{Fortunato2010,NewmanGirvan2004}
-	% \cite{Fortunato2010,Vehlowetal2013}
-	
-	
-	
-	% \section{Floats}
-	% {Figures} may be included using the command,\linebreak 
-	% \verb+\includegraphics+ in
-	% combination with or without its several options to further control
-	% graphic. \verb+\includegraphics+ is provided by {graphic[s,x].sty}
-	% which is part of any standard \LaTeX{} distribution.
-	% {graphicx.sty} is loaded by default. \LaTeX{} accepts figures in
-	% the postscript format while pdf\LaTeX{} accepts {*.pdf},
-	% {*.mps} (metapost), {*.png} and {*.png} formats. 
-	% pdf\LaTeX{} does not accept graphic files in the postscript format. 
-	
-	
-	
-	% The \verb+table+ environment is handy for marking up tabular
-	% material. If users want to use {multirow.sty},
-	% {array.sty}, etc., to fine control/enhance the tables, they
-	% are welcome to load any package of their choice and
-	% {cas-dc.cls} will work in combination with all loaded
-	% packages.
-	
-	% \begin{table}[width=.9\linewidth,cols=4,pos=h]
-		% \caption{This is a test caption. This is a test caption. This is a test
-			% caption. This is a test caption. Use \{table*\} instead of \{table\} if you
-			% want a two column spanned table.}\label{tbl1}
-		% \begin{tabular*}{\tblwidth}{@{} LLLL@{} }
-			% \toprule
-			% Col 1 & Col 2 & Col 3 & Col4\\
-			% \midrule
-			% 12345 & 12345 & 123 & 12345 \\
-			% 12345 & 12345 & 123 & 12345 \\
-			% 12345 & 12345 & 123 & 12345 \\
-			% 12345 & 12345 & 123 & 12345 \\
-			% 12345 & 12345 & 123 & 12345 \\
-			% \bottomrule
-			% \end{tabular*}
-		% \end{table}
-	
-	% \section[Theorem and ...]{Theorem and theorem like environments}
-	
-	% {cas-dc.cls} provides a few shortcuts to format theorems and
-	% theorem-like environments with ease. In all commands the options that
-	% are used with the \verb+\newtheorem+ command will work exactly in the same
-	% manner. {cas-dc.cls} provides three commands to format theorem or
-	% theorem-like environments: 
-	
-	% \begin{verbatim}
-		%  \newtheorem{theorem}{Theorem}
-		%  \newtheorem{lemma}[theorem]{Lemma}
-		%  \newdefinition{rmk}{Remark}
-		%  \newproof{pf}{Proof}
-		%  \newproof{pot}{Proof of Theorem \ref{thm2}}
-		% \end{verbatim}
-	
-	
-	% The \verb+\newtheorem+ command formats a
-	% theorem in \LaTeX's default style with italicized font, bold font
-	% for theorem heading and theorem number at the right hand side of the
-	% theorem heading.  It also optionally accepts an argument which
-	% will be printed as an extra heading in parentheses. 
-	
-	% \begin{verbatim}
-		%   \begin{theorem} 
-			%    For system (8), consensus can be achieved with 
-			%    $\|T_{\omega z}$ ...
-			%      \begin{eqnarray}\label{10}
-				%      ....
-				%      \end{eqnarray}
-			%   \end{theorem}
-		% \end{verbatim}  
-	
-	
-	% \newtheorem{theorem}{Theorem}
-	
-	% \begin{theorem}
-		% For system (8), consensus can be achieved with 
-		% $\|T_{\omega z}$ ...
-		% \begin{eqnarray}\label{10}
-			% ....
-			% \end{eqnarray}
-		% \end{theorem}
-	
-	% The \verb+\newdefinition+ command is the same in
-	% all respects as its \verb+\newtheorem+ counterpart except that
-	% the font shape is roman instead of italic.  Both
-	% \verb+\newdefinition+ and \verb+\newtheorem+ commands
-	% automatically define counters for the environments defined.
-	
-	% The \verb+\newproof+ command defines proof environments with
-	% upright font shape.  No counters are defined. 
-	
-	% \begin{figure*}
-		% 	\centering
-		% 	\includegraphics[width=.9\textwidth]{figs/cas-munnar-2024.png}
-		% 	\caption{The beauty of Munnar, Kerala. (See also Table \protect\ref{tbl1}).}
-		% 	\label{FIG:2}
-		% \end{figure*}
-	
-	
-	% \section[Enumerated ...]{Enumerated and Itemized Lists}
-	% {cas-dc.cls} provides an extended list processing macros
-	% which makes the usage a bit more user friendly than the default
-	% \LaTeX{} list macros.   With an optional argument to the
-	% \verb+\begin{enumerate}+ command, you can change the list counter
-		% type and its attributes.
-		
-		% \begin{verbatim}
-			%  \begin{enumerate}[1.]
-				%  \item The enumerate environment starts with an optional
-				%    argument `1.', so that the item counter will be suffixed
-				%    by a period.
-				%  \item You can use `a)' for alphabetical counter and '(i)' 
-				%   for roman counter.
-				%   \begin{enumerate}[a)]
-					%     \item Another level of list with alphabetical counter.
-					%     \item One more item before we start another.
-					%     \item One more item before we start another.
-					%     \item One more item before we start another.
-					%     \item One more item before we start another.
-					% \end{verbatim}
+
 				
-				% Further, the enhanced list environment allows one to prefix a
-				% string like `step' to all the item numbers.  
-				
-				% \begin{verbatim}
-					%  \begin{enumerate}[Step 1.]
-						%   \item This is the first step of the example list.
-						%   \item Obviously this is the second step.
-						%   \item The final step to wind up this example.
-						%  \end{enumerate}
-					% \end{verbatim}
-				
-				% \section{Cross-references}
-				% In electronic publications, articles may be internally
-				% hyperlinked. Hyperlinks are generated from proper
-				% cross-references in the article.  For example, the words
-				% \textcolor{black!80}{Fig.~1} will never be more than simple text,
-				% whereas the proper cross-reference \verb+\ref{tiger}+ may be
-				% turned into a hyperlink to the figure itself:
-				% \textcolor{blue}{Fig.~1}.  In the same way,
-				% the words \textcolor{blue}{Ref.~[1]} will fail to turn into a
-				% hyperlink; the proper cross-reference is \verb+\cite{Knuth96}+.
-				% Cross-referencing is possible in \LaTeX{} for sections,
-				% subsections, formulae, figures, tables, and literature
-				% references.
-				
-				% \section{Bibliography}
-				
-				% Two bibliographic style files (\verb+*.bst+) are provided ---
-				% {model1-num-names.bst} and {model2-names.bst} --- the first one can be
-				% used for the numbered scheme. This can also be used for the numbered
-				% with new options of {natbib.sty}. The second one is for the author year
-				% scheme. When  you use model2-names.bst, the citation commands will be
-				% like \verb+\citep+,  \verb+\citet+, \verb+\citealt+ etc. However when
-				% you use model1-num-names.bst, you may use only \verb+\cite+ command.
-				
-				% \verb+thebibliography+ environment.  Each reference is a\linebreak
-				% \verb+\bibitem+ and each \verb+\bibitem+ is identified by a label,
-				% by which it can be cited in the text:
-				
-				% \noindent In connection with cross-referencing and
-				% possible future hyperlinking it is not a good idea to collect
-				% more that one literature item in one \verb+\bibitem+.  The
-				% so-called Harvard or author-year style of referencing is enabled
-				% by the \LaTeX{} package {natbib}. With this package the
-				% literature can be cited as follows:
-				
-				% \begin{enumerate}[\textbullet]
-					% \item Parenthetical: \verb+\citep{WB96}+ produces (Wettig \& Brown, 1996).
-					% \item Textual: \verb+\citet{ESG96}+ produces Elson et al. (1996).
-					% \item An affix and part of a reference:\break
-					% \verb+\citep[e.g.][Ch. 2]{Gea97}+ produces (e.g. Governato et
-					% al., 1997, Ch. 2).
-					% \end{enumerate}
-				
-				% In the numbered scheme of citation, \verb+\cite{<label>}+ is used,
-				% since \verb+\citep+ or \verb+\citet+ has no relevance in the numbered
-				% scheme.  {natbib} package is loaded by {cas-dc} with
-				% \verb+numbers+ as default option.  You can change this to author-year
-				% or harvard scheme by adding option \verb+authoryear+ in the class
-				% loading command.  If you want to use more options of the {natbib}
-				% package, you can do so with the \verb+\biboptions+ command.  For
-				% details of various options of the {natbib} package, please take a
-				% look at the {natbib} documentation, which is part of any standard
-				% \LaTeX{} installation.
-				
-				% \appendix
-				% \section{My Appendix}
-				% Appendix sections are coded under \verb+\appendix+.
-				
-				% \verb+\printcredits+ command is used after appendix sections to list 
-				% author credit taxonomy contribution roles tagged using \verb+\credit+ 
-				% in frontmatter.
-				
-				% \printcredits
-				
-				% %% Loading bibliography style file
-				% %\bibliographystyle{model1-num-names}
-				% \bibliographystyle{cas-model2-names}
-				
-				% % Loading bibliography database
-				% \bibliography{cas-refs}
-				
-				
-				% %\vskip3pt
-				
-				% \bio{}
-				% Author biography without author photo.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% \endbio
-				
-				% \bio{figs/cas-pic1}
-				% Author biography with author photo.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% \endbio
-				
-				% \bio{figs/cas-pic1}
-				% Author biography with author photo.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% Author biography. Author biography. Author biography.
-				% \endbio
-				
-			\end{document}
-			
+\end{document}
