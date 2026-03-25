@@ -40,6 +40,18 @@ M.~Anouk~Stein, C.~Wu, C.~Carr, G.~Shih, J.~Dulkowski, kalpathy, L.~Chen,
 N.~I. of~Health Chest X-Ray~Dataset, Nih chest x-rays,
   \url{https://www.kaggle.com/datasets/nih-chest-xrays/data}, kaggle (2018).
 
+\bibitem{pydicom}
+D.~Mason, scaramallion, mrbean bremen, rhaxton, J.~Suever, D.~P. Orfanos,
+  V.~Sochat, G.~Lemaitre, C.~Bridge, A.~Panchal, A.~Rothberg, M.~D. Herrmann,
+  J.~Massich, J.~Kerns, T.~Robitaille, S.~Biggs, M.~Shun-Shin, moloney,
+  B.~Conrad, pawelzajdel, M.~Mattes, Y.~Lyu, F.~C. Morency, Z.~Baratz,
+  T.~Cogan, Taylor, thomsentner, huicpc0207,
+  \href{https://doi.org/10.5281/zenodo.19134308}{pydicom/pydicom: Pydicom
+  v2.4.5} (Mar. 2026).
+\newblock \href {https://doi.org/10.5281/zenodo.19134308}
+  {\path{doi:10.5281/zenodo.19134308}}.
+\newline\urlprefix\url{https://doi.org/10.5281/zenodo.19134308}
+
 \bibitem{albumentations}
 A.~Buslaev, V.~I. Iglovikov, E.~Khvedchenya, A.~Parinov, M.~Druzhinin, A.~A.
   Kalinin, \href{http://dx.doi.org/10.3390/info11020125}{Albumentations: Fast

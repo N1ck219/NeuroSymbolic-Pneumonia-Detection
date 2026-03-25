@@ -172,7 +172,7 @@ where $N_c$ is the number of samples for class $c$. This ensures that the model 
 \vspace{1em}
 	
 \subsection{Image Pre-processing}
-Raw DICOM images were processed using the \texttt{pydicom} library. The pre-processing pipeline consists of the following steps:
+Raw DICOM images were processed using the \texttt{pydicom} library\cite{pydicom}. The pre-processing pipeline consists of the following steps:
 \begin{itemize}
 	\item \textbf{Resizing:} All images were resized to a fixed resolution of $512 \times 512$ pixels to balance computational efficiency and feature retention.
 	\item \textbf{Normalization:} The pixel intensity values were converted to floating-point format and normalized to the range $[0, 1]$ using Min-Max scaling:
@@ -219,7 +219,7 @@ To improve model generalization and robustness, specifically for the proposed Ce
 	 \end{minipage}
 	
 	
-	\item \textbf{Noise Injection:} Gaussian Noise (Fig. \ref{fig:gauss_noise}) and Gaussian Blur (Fig. \ref{fig:gauss_blur}) .
+	\item \textbf{Noise Injection:} Gaussian Noise (Fig. \ref{fig:gauss_noise}) and Gaussian Blur (Fig. \ref{fig:gauss_blur}).
 	
  \noindent
  \begin{minipage}{\linewidth}
@@ -687,7 +687,7 @@ When analyzing these models, a critical architectural distinction must be made. 
 \subsection{Experimental Setup}
 The noise robustness evaluation was conducted on a representative, balanced subset of the test set. This choice was necessitated by the high computational cost of performing inference across five different architectures, each subjected to six progressive levels of Gaussian noise (0\%, 15\%, 30\%, 45\%, 60\%, and 90\% variance limits). 
 
-The models were evaluated on their classification accuracy under these corrupted conditions to measure structural resilience. Detailed confusion matrices for all evaluated models across the entire noise spectrum, along with the exact numerical results, are provided in Appendix \ref{sec:appendix_matrices} (see Table \ref{tab:noise_accuracy_extended} and Figure \ref{fig:noise_comparison_p1}).
+The models were evaluated on their classification accuracy under these corrupted conditions to measure structural resilience. Detailed confusion matrices for all evaluated models across the entire noise spectrum, along with the exact numerical results, are provided in Appendix \ref{sec:appendix_matrices} (see Table \ref{tab:noise_accuracy_extended}, Figure \ref{fig:noise_comparison_p1} and Figure \ref{fig:noise_comparison_p2}).
 
 \begin{note}
 	Due to the different scale of the evaluation set, the baseline metrics (0\% noise) reported in this comparative analysis may show slight numerical variations compared to the results obtained on the full RSNA dataset reported in Section \ref{sec:asp_methodology}. However, the subset remains statistically consistent, ensuring the validity of the observed performance degradation curves.
@@ -701,22 +701,22 @@ The comparative performance degradation across all noise levels is visually synt
 
 At baseline conditions (0\% noise), highly parameterized single-task architectures naturally exhibit superior accuracy. EfficientNet-B0 and standard ResNet achieve 87.2\% and 86.0\% respectively, outperforming the proposed CeNN hybrid model (79.5\%). This initial gap is expected given the multi-task nature of our network.
 
-However, as signal corruption increases, the structural limitations of standard CNNs become clearly visible. The ablation baseline (DenseNet Without CeNN) experiences a catastrophic structural collapse at extreme noise levels (90\%), dropping to an accuracy of 29.8\%. Standard ResNet also degrades significantly, falling to 67.8\%. 
+However, as signal corruption increases, the structural limitations of standard CNNs become clearly visible. The ablation baseline (DenseNet Without CeNN) experiences a catastrophic structural collapse at extreme noise levels (90\%), dropping to an accuracy of 30.6\%. Standard ResNet also degrades significantly, falling to 67.9\%. 
 
 Conversely, SE-ResNet and EfficientNet-B0 demonstrate strong inherent resilience, maintaining accuracies above 81\% even at extreme noise levels.
 
-Most notably, the proposed CeNN architecture exhibits a highly resilient degradation curve. While starting at a lower baseline accuracy due to the MTL constraint, the network only loses 6.2\% accuracy across the entire noise spectrum (dropping from 79.5\% to 73.3\%). The CeNN layer acts as an exceptional deterministic filter, preventing severe degradation and maintaining stable feature extraction regardless of signal corruption.
+Most notably, the proposed CeNN architecture exhibits a highly resilient degradation curve. While starting at a lower baseline accuracy due to the MTL constraint, the network only loses 6.2\% accuracy across the entire noise spectrum (dropping from 79.5\% to 73.4\%). The CeNN layer acts as an exceptional deterministic filter, preventing severe degradation and maintaining stable feature extraction regardless of signal corruption.
 
 \noindent
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{figs/conf_matr_noise/line_chart_zoomed.png}
-	\captionof{figure}{Performance degradation of the evaluated architectures under increasing levels of Gaussian noise.}
+	\captionof{figure}{Performance degradation of the evaluated architectures under increasing levels of Gaussian Noise.}
 	\label{fig:noise_line_chart}
 \end{minipage}
 \vspace{1em}
 
-Beyond standard accuracy, analyzing the degradation through the Matthews Correlation Coefficient (MCC) and AUC-ROC provides a deeper understanding of the models' discriminative collapse (detailed comprehensively in Appendix \ref{sec:appendix_matrices}). At 90\% noise, the standard ResNet50 experiences a severe drop in MCC, falling from 0.5727 to a critical 0.3347, indicating a near-random classification capability on minority classes. The Ablation baseline completely collapses (MCC dropping to 0.1481). In stark contrast, the Proposed CeNN architecture exhibits exceptional stability: its MCC only degrades from 0.4945 to 0.4209 under maximum signal corruption. The CeNN layer acts as an exceptional deterministic filter, preventing severe degradation and maintaining stable feature extraction regardless of signal corruption.
+Beyond standard accuracy, analyzing the degradation through the Matthews Correlation Coefficient (MCC) and AUC-ROC provides a deeper understanding of the models' discriminative collapse (detailed comprehensively in Appendix \ref{sec:appendix_matrices}). At 90\% noise, the standard ResNet50 experiences a severe drop in MCC, falling from 0.5727 to a critical 0.3347, indicating a near-random classification capability on minority classes. The Ablation baseline completely collapses (MCC dropping to 0.1481). In stark contrast, the Proposed CeNN architecture exhibits exceptional stability: its MCC only degrades from 0.4995 to 0.4209 under maximum signal corruption. The CeNN layer acts as an exceptional deterministic filter, preventing severe degradation and maintaining stable feature extraction regardless of signal corruption.
 
 \section{Computational Efficiency and Inference Times}
 A critical factor for the deployment of any medical Artificial Intelligence system is its computational footprint. Real-world clinical triage environments require systems that can process radiographs swiftly without necessitating prohibitive investments in top-tier server hardware. To evaluate this, we monitored both the training phase and the inference execution times.
@@ -961,7 +961,6 @@ Finally, during the writing process, the author drafted the foundational structu
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/SE-ResNet50_Degradation.png}
 		\caption{SE-ResNet50 - Metric Degradation}
 	\end{subfigure}	
-	\label{fig:noise_comparison_p1}
 %\end{figure*}
 \vspace{1.5em}
 %\begin{figure*}[htbp]
@@ -980,6 +979,7 @@ Finally, during the writing process, the author drafted the foundational structu
 		\caption{EfficientNet-B0 - Metric Degradation}
 	\end{subfigure}
 	\caption{Detailed performance degradation and confusion matrices (Part 1).}
+	\label{fig:noise_comparison_p1}
 	\vspace{1.5em}
 \end{figure*}
 
@@ -996,9 +996,7 @@ Finally, during the writing process, the author drafted the foundational structu
 		\includegraphics[width=\linewidth]{figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradation.png}
 		\caption{Ablation (No CeNN) - Metric Degradation}
 	\end{subfigure}
-	\vspace{1.5em}
-	
-	\label{fig:noise_comparison_p2}
+	\vspace{1.5em}	
 %\end{figure*}
 
 %\begin{figure*}[htbp]
@@ -1018,7 +1016,7 @@ Finally, during the writing process, the author drafted the foundational structu
 	\end{subfigure}
 %	\caption{Detailed performance degradation and confusion matrices (Part 2).}
 	\caption{Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures.}
-	\label{fig:noise_comparison_p3}
+	\label{fig:noise_comparison_p2}
 \end{figure*}
 
 				

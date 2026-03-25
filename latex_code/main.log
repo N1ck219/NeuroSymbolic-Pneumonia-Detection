@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.27)  25 MAR 2026 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.27)  25 MAR 2026 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -995,7 +995,7 @@ LaTeX Font Info:    Trying to load font information for TS1+stix on input line
  (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
-<figs/trasformazioni/result_1_HorizontalFlip_00000514_005.png, id=45, 722.7pt x
+<figs/trasformazioni/result_1_HorizontalFlip_00000514_005.png, id=46, 722.7pt x
  361.35pt>
 File: figs/trasformazioni/result_1_HorizontalFlip_00000514_005.png Graphic file
  (type png)
@@ -1009,7 +1009,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 198.
 See the caption package documentation for explanation.
 
-<figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png, id=46, 722.7pt
+<figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png, id=47, 722.7pt
  x 361.35pt>
 File: figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png Graphic fi
 le (type png)
@@ -1022,7 +1022,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 207.
 See the caption package documentation for explanation.
 
-<figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png, id=48,
+<figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png, id=49,
  722.7pt x 361.35pt>
 File: figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png Gr
 aphic file (type png)
@@ -1035,7 +1035,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 217.
 See the caption package documentation for explanation.
 
-<figs/trasformazioni/result_4_GaussNoise_00001836_050.png, id=51, 722.7pt x 361
+<figs/trasformazioni/result_4_GaussNoise_00001836_050.png, id=52, 722.7pt x 361
 .35pt>
 File: figs/trasformazioni/result_4_GaussNoise_00001836_050.png Graphic file (ty
 pe png)
@@ -1048,7 +1048,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 228.
 See the caption package documentation for explanation.
 
-<figs/trasformazioni/result_5_GaussianBlur_00005139_000.png, id=52, 722.7pt x 3
+<figs/trasformazioni/result_5_GaussianBlur_00005139_000.png, id=53, 722.7pt x 3
 61.35pt>
 File: figs/trasformazioni/result_5_GaussianBlur_00005139_000.png Graphic file (
 type png)
@@ -1070,7 +1070,7 @@ Underfull \hbox (badness 1436) in paragraph at lines 243--244
 \T1/stix/m/n/10 into the model's fron-tend. The val-i-da-tion set re-mained
  []
 
-<figs/schema_rete.png, id=74, 2826.56pt x 1541.76pt>
+<figs/schema_rete.png, id=76, 2826.56pt x 1541.76pt>
 File: figs/schema_rete.png Graphic file (type png)
 <use figs/schema_rete.png>
 Package pdftex.def Info: figs/schema_rete.png  used on input line 252.
@@ -1115,7 +1115,7 @@ Underfull \hbox (badness 1043) in paragraph at lines 291--292
  []
 
 [5]
-<figs/ris_rete.png, id=115, 858.5676pt x 860.013pt>
+<figs/ris_rete.png, id=117, 858.5676pt x 860.013pt>
 File: figs/ris_rete.png Graphic file (type png)
 <use figs/ris_rete.png>
 Package pdftex.def Info: figs/ris_rete.png  used on input line 357.
@@ -1190,7 +1190,7 @@ ets.
  []
 
 [9]
-<figs/loss_curve_final.png, id=204, 621.82312pt x 339.51843pt>
+<figs/loss_curve_final.png, id=206, 621.82312pt x 339.51843pt>
 File: figs/loss_curve_final.png Graphic file (type png)
 <use figs/loss_curve_final.png>
 Package pdftex.def Info: figs/loss_curve_final.png  used on input line 546.
@@ -1211,7 +1211,7 @@ Overfull \hbox (2.80234pt too wide) in alignment at lines 567--578
 [] [] [] [] [] 
  []
 
-<figs/risultati.png, id=208, 434.3427pt x 326.6604pt>
+<figs/risultati.png, id=210, 434.3427pt x 326.6604pt>
 File: figs/risultati.png Graphic file (type png)
 <use figs/risultati.png>
 Package pdftex.def Info: figs/risultati.png  used on input line 588.
@@ -1221,7 +1221,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 589.
 See the caption package documentation for explanation.
 
-<figs/risultati_0.4.png, id=209, 434.3427pt x 326.6604pt>
+<figs/risultati_0.4.png, id=211, 434.3427pt x 326.6604pt>
 File: figs/risultati_0.4.png Graphic file (type png)
 <use figs/risultati_0.4.png>
 Package pdftex.def Info: figs/risultati_0.4.png  used on input line 597.
@@ -1236,7 +1236,7 @@ Underfull \hbox (badness 1210) in paragraph at lines 603--604
 []\T1/stix/m/n/10 This ad-just-ment is par-tic-u-larly cru-cial in a med-i-cal
  []
 
-<figs/conf_matr_asp/Conf_20.png, id=224, 1003.8303pt x 353.4003pt>
+<figs/conf_matr_asp/Conf_20.png, id=226, 1003.8303pt x 353.4003pt>
 File: figs/conf_matr_asp/Conf_20.png Graphic file (type png)
 <use figs/conf_matr_asp/Conf_20.png>
 Package pdftex.def Info: figs/conf_matr_asp/Conf_20.png  used on input line 626
@@ -1248,7 +1248,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 See the caption package documentation for explanation.
 
 [11 <./figs/risultati_0.4.png> <./figs/conf_matr_asp/Conf_20.png>]
-<figs/conf_matr_asp/Conf_29.png, id=237, 1003.8303pt x 353.4003pt>
+<figs/conf_matr_asp/Conf_29.png, id=239, 1003.8303pt x 353.4003pt>
 File: figs/conf_matr_asp/Conf_29.png Graphic file (type png)
 <use figs/conf_matr_asp/Conf_29.png>
 Package pdftex.def Info: figs/conf_matr_asp/Conf_29.png  used on input line 640
@@ -1287,14 +1287,6 @@ Underfull \hbox (badness 1502) in paragraph at lines 685--686
 \T1/stix/m/n/10 two com-plex spa-tial and se-man-tic tasks with a shared
  []
 
-
-Package caption Warning: \label without proper reference on input line 964.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:noise_comparison_p1' on page 12 undefined on inpu
-t line 690.
-
 [12 <./figs/conf_matr_asp/Conf_29.png>]
 Underfull \hbox (badness 2343) in paragraph at lines 706--707
 []\T1/stix/m/n/10 Conversely, SE-ResNet and EfficientNet-B0 demon-
@@ -1306,7 +1298,7 @@ Underfull \hbox (badness 1762) in paragraph at lines 706--707
 es
  []
 
-<figs/conf_matr_noise/line_chart_zoomed.png, id=261, 859.7721pt x 498.663pt>
+<figs/conf_matr_noise/line_chart_zoomed.png, id=264, 859.7721pt x 498.663pt>
 File: figs/conf_matr_noise/line_chart_zoomed.png Graphic file (type png)
 <use figs/conf_matr_noise/line_chart_zoomed.png>
 Package pdftex.def Info: figs/conf_matr_noise/line_chart_zoomed.png  used on in
@@ -1343,7 +1335,7 @@ Underfull \hbox (badness 1142) in paragraph at lines 818--819
  []
 
 [15]
-<figs/autoencoder_noise.png, id=299, 1293.633pt x 704.6325pt>
+<figs/autoencoder_noise.png, id=303, 1293.633pt x 704.6325pt>
 File: figs/autoencoder_noise.png Graphic file (type png)
 <use figs/autoencoder_noise.png>
 Package pdftex.def Info: figs/autoencoder_noise.png  used on input line 832.
@@ -1392,17 +1384,17 @@ llenge$[][]\T1/stix/m/n/8 , kag-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--50
+Underfull \hbox (badness 10000) in paragraph at lines 56--62
 []\T1/stix/m/n/8 A. Bus-laev, V. I. Iglovikov, E. Khved-chenya, A. Pari-nov,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--50
+Underfull \hbox (badness 10000) in paragraph at lines 56--62
 \T1/stix/m/n/8 M. Druzhinin, A. A. Kalinin, [][]Al-bu-men-ta-tions: Fast and
  []
 
 
-Underfull \hbox (badness 3601) in paragraph at lines 44--50
+Underfull \hbox (badness 3601) in paragraph at lines 56--62
 \T1/stix/m/n/8 flex-i-ble im-age aug-men-ta-tions[][], In-for-ma-tion 11 (2) (2
 020) 125.
  []
@@ -1433,48 +1425,48 @@ CUTED [rightcolumn badness]: 0
 
 
 ]
-<figs/conf_matr_noise/ResNet50_CM.png, id=360, 1293.1512pt x 740.0448pt>
+<figs/conf_matr_noise/ResNet50_CM.png, id=368, 1293.1512pt x 740.0448pt>
 File: figs/conf_matr_noise/ResNet50_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/ResNet50_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/ResNet50_CM.png  used on input li
 ne 941.
 (pdftex.def)             Requested size: 237.36214pt x 135.83339pt.
-<figs/conf_matr_noise/ResNet50_Degradation.png, id=361, 610.9224pt x 395.076pt>
+<figs/conf_matr_noise/ResNet50_Degradation.png, id=369, 610.9224pt x 395.076pt>
 
 File: figs/conf_matr_noise/ResNet50_Degradation.png Graphic file (type png)
 <use figs/conf_matr_noise/ResNet50_Degradation.png>
 Package pdftex.def Info: figs/conf_matr_noise/ResNet50_Degradation.png  used on
  input line 947.
 (pdftex.def)             Requested size: 237.36214pt x 153.50029pt.
-<figs/conf_matr_noise/SE-ResNet50_CM.png, id=362, 1293.1512pt x 740.0448pt>
+<figs/conf_matr_noise/SE-ResNet50_CM.png, id=370, 1293.1512pt x 740.0448pt>
 File: figs/conf_matr_noise/SE-ResNet50_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/SE-ResNet50_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/SE-ResNet50_CM.png  used on input
  line 955.
 (pdftex.def)             Requested size: 237.36214pt x 135.83339pt.
-<figs/conf_matr_noise/SE-ResNet50_Degradation.png, id=363, 610.9224pt x 395.076
+<figs/conf_matr_noise/SE-ResNet50_Degradation.png, id=371, 610.9224pt x 395.076
 pt>
 File: figs/conf_matr_noise/SE-ResNet50_Degradation.png Graphic file (type png)
 <use figs/conf_matr_noise/SE-ResNet50_Degradation.png>
 Package pdftex.def Info: figs/conf_matr_noise/SE-ResNet50_Degradation.png  used
  on input line 961.
 (pdftex.def)             Requested size: 237.36214pt x 153.50029pt.
-<figs/conf_matr_noise/EfficientNet-B0_CM.png, id=364, 1293.1512pt x 740.0448pt>
+<figs/conf_matr_noise/EfficientNet-B0_CM.png, id=372, 1293.1512pt x 740.0448pt>
 
 File: figs/conf_matr_noise/EfficientNet-B0_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/EfficientNet-B0_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/EfficientNet-B0_CM.png  used on i
-nput line 973.
+nput line 972.
 (pdftex.def)             Requested size: 237.36214pt x 135.83339pt.
-<figs/conf_matr_noise/EfficientNet-B0_Degradation.png, id=365, 610.9224pt x 395
+<figs/conf_matr_noise/EfficientNet-B0_Degradation.png, id=373, 610.9224pt x 395
 .076pt>
 File: figs/conf_matr_noise/EfficientNet-B0_Degradation.png Graphic file (type p
 ng)
 <use figs/conf_matr_noise/EfficientNet-B0_Degradation.png>
 Package pdftex.def Info: figs/conf_matr_noise/EfficientNet-B0_Degradation.png  
-used on input line 979.
+used on input line 978.
 (pdftex.def)             Requested size: 237.36214pt x 153.50029pt.
-<figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png, id=366, 1293.1512pt x 74
+<figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png, id=374, 1293.1512pt x 74
 0.0448pt>
 File: figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png Graphic file (type p
 ng)
@@ -1482,7 +1474,7 @@ ng)
 Package pdftex.def Info: figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png  
 used on input line 990.
 (pdftex.def)             Requested size: 237.36214pt x 135.83339pt.
-<figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradation.png, id=367, 610.922
+<figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradation.png, id=375, 610.922
 4pt x 395.076pt>
 File: figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradation.png Graphic fil
 e (type png)
@@ -1490,20 +1482,20 @@ e (type png)
 Package pdftex.def Info: figs/conf_matr_noise/Ablation_Model_(No_CeNN)_Degradat
 ion.png  used on input line 996.
 (pdftex.def)             Requested size: 237.36214pt x 153.50029pt.
-<figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png, id=368, 1293.1512pt x 740.04
+<figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png, id=376, 1293.1512pt x 740.04
 48pt>
 File: figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png  used
- on input line 1010.
+ on input line 1008.
 (pdftex.def)             Requested size: 237.36214pt x 135.83339pt.
-<figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.png, id=369, 610.9224pt 
+<figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.png, id=377, 610.9224pt 
 x 395.076pt>
 File: figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.png Graphic file (t
 ype png)
 <use figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.png>
 Package pdftex.def Info: figs/conf_matr_noise/Proposed_Hybrid_CeNN_Degradation.
-png  used on input line 1016.
+png  used on input line 1014.
 (pdftex.def)             Requested size: 237.36214pt x 153.50029pt.
  [21 <./figs/conf_matr_noise/ResNet50_CM.png> <./figs/conf_matr_noise/ResNet50_
 Degradation.png> <./figs/conf_matr_noise/SE-ResNet50_CM.png> <./figs/conf_matr_
@@ -1521,17 +1513,14 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20588 strings out of 467867
- 321877 string characters out of 5418334
- 1128059 words of memory out of 5000000
- 48975 multiletter control sequences out of 15000+600000
+ 20591 strings out of 467867
+ 321909 string characters out of 5418334
+ 1127951 words of memory out of 5000000
+ 48977 multiletter control sequences out of 15000+600000
  748056 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,18n,117p,1459b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1554,9 +1543,9 @@ ers/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathrm.pfb
 ><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mat
 hscr.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/
 stix-mathsf.pfb>
-Output written on main.pdf (22 pages, 10267571 bytes).
+Output written on main.pdf (22 pages, 10269187 bytes).
 PDF statistics:
- 615 PDF objects out of 1000 (max. 8388607)
- 177 named destinations out of 1000 (max. 500000)
+ 622 PDF objects out of 1000 (max. 8388607)
+ 178 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

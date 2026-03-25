@@ -5,46 +5,48 @@ Reallocating 'name_of_file' (item size: 1) to 15 items.
 The style file: elsarticle-num.bst
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 Database file #1: cas-refs.bib
+Warning--entry type for "pydicom" isn't style-file defined
+--line 124 of file cas-refs.bib
 Warning--empty pages in kubakisa20XXnoisy
-You've used 13 entries,
+You've used 14 entries,
             2952 wiz_defined-function locations,
-            753 strings with 7865 characters,
-and the built_in function-call counts, 4780 in all, are:
-= -- 427
-> -- 199
+            760 strings with 8470 characters,
+and the built_in function-call counts, 5378 in all, are:
+= -- 453
+> -- 284
 < -- 4
-+ -- 75
-- -- 62
-* -- 336
-:= -- 647
-add.period$ -- 19
-call.type$ -- 13
-change.case$ -- 15
++ -- 104
+- -- 90
+* -- 408
+:= -- 759
+add.period$ -- 21
+call.type$ -- 14
+change.case$ -- 16
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 168
-empty$ -- 532
-format.name$ -- 73
-if$ -- 1244
+cite$ -- 15
+duplicate$ -- 177
+empty$ -- 564
+format.name$ -- 102
+if$ -- 1366
 int.to.chr$ -- 0
-int.to.str$ -- 13
+int.to.str$ -- 14
 missing$ -- 7
-newline$ -- 59
-num.names$ -- 13
-pop$ -- 121
+newline$ -- 64
+num.names$ -- 14
+pop$ -- 131
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 305
+skip$ -- 321
 stack$ -- 0
 substring$ -- 188
-swap$ -- 68
+swap$ -- 72
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 26
-width$ -- 15
-write$ -- 131
-(There was 1 warning)
+while$ -- 27
+width$ -- 16
+write$ -- 141
+(There were 2 warnings)

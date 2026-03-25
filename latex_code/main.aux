@@ -26,6 +26,7 @@
 \newlabel{sec:dataset}{{3}{2}{Dataset and Pre-processing}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset Description}{2}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Data Partitioning and Balancing}{2}{subsection.3.2}\protected@file@percent }
+\citation{pydicom}
 \citation{albumentations}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Class distribution over the dataset.}}{3}{figure.1}\protected@file@percent }
 \newlabel{fig:class_dis}{{1}{3}{Class distribution over the dataset}{figure.1}{}}
@@ -123,8 +124,8 @@
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comprehensive performance comparison across different classification strategies on the full test dataset. The Neuro-Symbolic (Organic) approach maximizes Recall and minimizes False Negatives, making it the safest configuration for clinical screening.}}{13}{table.caption.5}\protected@file@percent }
 \newlabel{tab:master_results}{{2}{13}{Comprehensive performance comparison across different classification strategies on the full test dataset. The Neuro-Symbolic (Organic) approach maximizes Recall and minimizes False Negatives, making it the safest configuration for clinical screening}{table.caption.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Results and Discussion}{13}{subsection.10.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Performance degradation of the evaluated architectures under increasing levels of Gaussian noise.}}{13}{figure.14}\protected@file@percent }
-\newlabel{fig:noise_line_chart}{{14}{13}{Performance degradation of the evaluated architectures under increasing levels of Gaussian noise}{figure.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Performance degradation of the evaluated architectures under increasing levels of Gaussian Noise.}}{13}{figure.14}\protected@file@percent }
+\newlabel{fig:noise_line_chart}{{14}{13}{Performance degradation of the evaluated architectures under increasing levels of Gaussian Noise}{figure.14}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {11}Computational Efficiency and Inference Times}{13}{section.11}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images).}}{14}{table.caption.6}\protected@file@percent }
 \newlabel{tab:inference_raw}{{3}{14}{Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images)}{table.caption.6}{}}
@@ -154,22 +155,22 @@
 \bibcite{asp}{{4}{}{{}}{{}}}
 \bibcite{rsna-pneumonia-detection-challenge}{{5}{}{{}}{{}}}
 \bibcite{NIH-chest-xray}{{6}{}{{}}{{}}}
-\bibcite{albumentations}{{7}{}{{}}{{}}}
-\bibcite{torchxray}{{8}{}{{}}{{}}}
-\bibcite{cbam}{{9}{}{{}}{{}}}
-\bibcite{gebser2018multishotaspsolvingclingo}{{10}{}{{}}{{}}}
-\bibcite{he2016deep}{{11}{}{{}}{{}}}
-\bibcite{hu2018squeeze}{{12}{}{{}}{{}}}
-\bibcite{tan2019efficientnet}{{13}{}{{}}{{}}}
+\bibcite{pydicom}{{7}{}{{}}{{}}}
+\bibcite{albumentations}{{8}{}{{}}{{}}}
+\bibcite{torchxray}{{9}{}{{}}{{}}}
+\bibcite{cbam}{{10}{}{{}}{{}}}
+\bibcite{gebser2018multishotaspsolvingclingo}{{11}{}{{}}{{}}}
+\bibcite{he2016deep}{{12}{}{{}}{{}}}
+\bibcite{hu2018squeeze}{{13}{}{{}}{{}}}
+\bibcite{tan2019efficientnet}{{14}{}{{}}{{}}}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Detailed Noise Robustness Results}{20}{appendix.A}\protected@file@percent }
 \newlabel{sec:appendix_matrices}{{A}{20}{Detailed Noise Robustness Results}{appendix.A}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Comprehensive Noise Robustness Metrics. Full evaluation including Precision, Recall, F1-Score, Specificity, AUC-ROC, and MCC across key Gaussian noise levels.}}{20}{table.6}\protected@file@percent }
 \newlabel{tab:noise_accuracy_extended}{{6}{20}{Comprehensive Noise Robustness Metrics. Full evaluation including Precision, Recall, F1-Score, Specificity, AUC-ROC, and MCC across key Gaussian noise levels}{table.6}{}}
 \csxdef{lastpage}{21}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\newlabel{fig:noise_comparison_p1}{{\caption@xref {fig:noise_comparison_p1}{ on input line 964}}{21}{Detailed Noise Robustness Results}{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed performance degradation and confusion matrices (Part 1).}}{21}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:noise_comparison_p2}{{\caption@xref {fig:noise_comparison_p2}{ on input line 1001}}{22}{Detailed Noise Robustness Results}{figure.caption.14}{}}
+\newlabel{fig:noise_comparison_p1}{{16}{21}{Detailed performance degradation and confusion matrices (Part 1)}{figure.caption.13}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures.}}{22}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:noise_comparison_p3}{{17}{22}{Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures}{figure.caption.14}{}}
+\newlabel{fig:noise_comparison_p2}{{17}{22}{Detailed performance degradation and confusion matrices (Part 2). The degradation charts highlight the stabilization of MCC and AUC metrics provided by the CeNN frontend compared to standard architectures}{figure.caption.14}{}}
 \gdef \@abspage@last{22}
