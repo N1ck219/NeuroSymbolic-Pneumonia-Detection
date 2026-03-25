@@ -5,14 +5,14 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from tqdm import tqdm
-from settings import DEVICE, BATCH_SIZE, EPOCHS, PATIENCE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH
+from settings import DEVICE, BATCH_SIZE, EPOCHS, PATIENCE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH, ACCUMULATION_STEPS
 from dataset import get_dataloaders
 from losses import CIoULoss
 from models import HighResPneumoniaDetector
 
 # --- TRAINING ENGINE ---
 def run_training(model, train_loader, val_loader, optimizer, epochs, phase_name="Phase"):
-    accumulation_steps = 8 
+    accumulation_steps = ACCUMULATION_STEPS 
     criterion_cls = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([1.5]).to(DEVICE), reduction='mean')
     criterion_ciou = CIoULoss()
     criterion_size = nn.L1Loss() 

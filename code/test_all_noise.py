@@ -11,12 +11,12 @@ import torchvision.models as models
 import timm
 from settings import DEVICE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH, ABLATION_MODEL_PATH, RESNET_WEIGHTS, EFFNET_WEIGHTS, SERESNET_WEIGHTS
 
-# Import dai moduli locali
+# Import
 from settings import DEVICE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH, ABLATION_MODEL_PATH
 from dataset import get_dataloaders
 from models import HighResPneumoniaDetector, NoCeNNPneumoniaDetector
 
-# --- 1. CONFIGURAZIONE E SETUP CARTELLE ---
+# --- 1. SETUP ---
 NOISE_LEVELS = [0.0, 0.15, 0.30, 0.45, 0.60, 0.90]
 SAVE_DIR = os.path.join("..", "results", "confusion_matrix_noise")
 os.makedirs(SAVE_DIR, exist_ok=True)
@@ -32,11 +32,10 @@ def add_noise(img_tensor, noise_factor):
     return torch.clamp(img_tensor + noise, 0.0, 1.0)
 
 if __name__ == "__main__":
-    # Caricamento Dataloader
+    # Dataloader
     _, val_loader = get_dataloaders(CSV_PATH, TRAIN_IMG_PATH)
     
-    # --- 2. INIZIALIZZAZIONE MODELLI ---
-    # Definiamo i modelli, il loro percorso pesi e la soglia clinica ottimale
+    # --- 2. MODELS ---
     models_to_test = []
 
     # A. ResNet50
@@ -53,37 +52,37 @@ if __name__ == "__main__":
     seresnet = timm.create_model('seresnet50', pretrained=False, in_chans=1, num_classes=1)
     models_to_test.append({"name": "SE-ResNet50", "model": seresnet, "path": SERESNET_WEIGHTS, "thresh": 0.50})
 
-    # D. Ablation Study (Senza CeNN)
+    # D. Ablation Study (Without CeNN)
     no_cenn = NoCeNNPneumoniaDetector()
     models_to_test.append({"name": "Ablation Model (No CeNN)", "model": no_cenn, "path": ABLATION_MODEL_PATH, "thresh": 0.40})
 
-    # E. Proposed Model (Con CeNN)
+    # E. Proposed Model (With CeNN)
     hybrid = HighResPneumoniaDetector()
     models_to_test.append({"name": "Proposed Hybrid CeNN", "model": hybrid, "path": BEST_MODEL_PATH, "thresh": 0.40})
 
-    # Struttura per salvare i risultati aggregati (se ti servono per il grafico a linee finale)
+    # Structure to save aggregated results
     all_results = {}
 
-    # --- 3. LOOP SUI MODELLI ---
+    # --- 3. LOOP MODELS ---
     for item in models_to_test:
         model_name = item["name"]
         model = item["model"].to(DEVICE)
         weights_path = item["path"]
         chosen_thresh = item["thresh"]
         
-        print(f"\n---> Avvio test per: {model_name}")
+        print(f"\n---> Starting test for: {model_name}")
         
         try:
             model.load_state_dict(torch.load(weights_path, map_location=DEVICE))
         except FileNotFoundError:
-            print(f"[ERROR] Pesi non trovati in '{weights_path}'. Salto questo modello.")
+            print(f"[ERROR] Weights not found in '{weights_path}'. Skipping this model.")
             continue
             
         model.eval()
         
         results = {'noise': [], 'accuracy': [], 'recall': [], 'precision': [], 'f1': []}
         
-        # Setup Grafico Matrici
+        # Setup Confusion Matrix Plot
         fig_cm, axes_cm = plt.subplots(2, 3, figsize=(18, 10))
         fig_cm.suptitle(model_name, fontsize=22, fontweight='bold', y=1.02)
         axes_cm = axes_cm.flatten()
@@ -93,19 +92,19 @@ if __name__ == "__main__":
                 all_probs, all_targets = [], []
                 loop = tqdm(val_loader, desc=f"Noise {int(noise_lvl*100):02d}%", leave=False, dynamic_ncols=True)
                 
-                # Attenzione: il dataloader del codice base restituisce (imgs, targets, boxes)
+                # Note: the dataloader returns (imgs, targets, boxes)
                 for batch_data in loop:
                     clean_imgs_batch = batch_data[0]
                     targets = batch_data[1].to(DEVICE)
                     
                     noisy_input = add_noise(clean_imgs_batch, noise_lvl).to(DEVICE)
                     
-                    # --- TTA Pass 1 (Normale) ---
+                    # --- TTA Pass 1 (Normal) ---
                     out_1 = model(noisy_input)
                     cls_1 = out_1[0] if isinstance(out_1, tuple) else out_1
                     prob_1 = torch.sigmoid(cls_1)
                     
-                    # --- TTA Pass 2 (Flippato) ---
+                    # --- TTA Pass 2 (Flipped) ---
                     flipped_input = torch.flip(noisy_input, [3])
                     out_2 = model(flipped_input)
                     cls_2 = out_2[0] if isinstance(out_2, tuple) else out_2
@@ -132,26 +131,24 @@ if __name__ == "__main__":
                 results['precision'].append(p_mal)
                 results['f1'].append(f1_mal)
                 
-                # Disegno Confusion Matrix (sempre in colore 'Blues')
                 cm = confusion_matrix(all_targets, preds)
                 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=axes_cm[idx], cbar=False, annot_kws={"size": 16},
                             xticklabels=['Healthy', 'Pneumonia'], yticklabels=['True: Healthy', 'True: Pneumonia'])
                 
-                # Titoletto pulito come richiesto
                 axes_cm[idx].set_title(f"Noise: {int(noise_lvl*100)}%\nAcc: {acc:.1%}", fontsize=16, fontweight='bold')
                 
                 if idx % 3 != 0:
                     axes_cm[idx].set_ylabel('')
                     axes_cm[idx].set_yticks([])
 
-        # Salvataggio Matrici di Confusione
+        # Saving Confusion Matrix
         plt.tight_layout()
         save_path_cm = os.path.join(SAVE_DIR, f"{model_name.replace(' ', '_')}_CM.png")
         plt.savefig(save_path_cm, bbox_inches='tight', dpi=150)
         plt.close()
-        print(f"[OK] Salvato {save_path_cm}")
+        print(f"[OK] Saved {save_path_cm}")
 
-        # Salvataggio Grafico Lineare (Accuracy e Recall) per il singolo modello
+        # Saving Line Plot (Accuracy and Recall) for the single model
         plt.figure(figsize=(8, 5))
         plt.plot(results['noise'], results['accuracy'], marker='o', color='blue', linewidth=2, label='Accuracy')
         plt.plot(results['noise'], results['recall'], marker='s', color='red', linestyle='--', linewidth=2, label='Recall')
@@ -168,8 +165,8 @@ if __name__ == "__main__":
         
         all_results[model_name] = results
         
-        # Svuota memoria GPU
+        # Clear GPU memory
         del model
         torch.cuda.empty_cache()
 
-    print("\n[SUCCESS] Tutte le immagini sono state salvate in:", SAVE_DIR)
+    print("\n[SUCCESS] All images have been saved in:", SAVE_DIR)
