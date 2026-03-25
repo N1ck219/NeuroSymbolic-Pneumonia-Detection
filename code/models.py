@@ -150,17 +150,14 @@ class HighResPneumoniaDetector(nn.Module):
 
 class NoCeNNPneumoniaDetector(nn.Module):
     """
-    Ablation Model: Architettura identica alla proposta originale ma SENZA
-    il frontend CeNN. L'immagine in scala di grigi entra direttamente nel backbone.
+    Ablation Model: Same architecture but without CeNN frontend.
     """
     def __init__(self):
         super().__init__()
-        # NESSUN FRONTEND CeNN!
         
         try:
             self.backbone = xrv.models.DenseNet(weights="densenet121-res224-all").features
             old_conv = self.backbone.conv0
-            # Adattiamo conv0 per ricevere 1 canale anziché 3 (visto che manca la CeNN)
             self.backbone.conv0 = nn.Conv2d(1, old_conv.out_channels, kernel_size=old_conv.kernel_size, stride=old_conv.stride, padding=old_conv.padding, bias=(old_conv.bias is not None))
         except:
             import torchvision.models as models
@@ -193,7 +190,6 @@ class NoCeNNPneumoniaDetector(nn.Module):
         self.pool = nn.AdaptiveAvgPool2d((24, 24))
 
     def forward(self, x):
-        # L'input x entra DIRETTAMENTE nel backbone (Nessun x = self.cenn(x))
         feat = self.backbone(x)
         feat = self.common_cbam(feat)
         

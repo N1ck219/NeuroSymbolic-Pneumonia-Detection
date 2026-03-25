@@ -127,45 +127,25 @@
 \newlabel{fig:noise_line_chart}{{14}{13}{Performance degradation of the evaluated architectures under increasing levels of Gaussian noise}{figure.14}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {11}Computational Efficiency and Inference Times}{13}{section.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Training Phase}{13}{subsection.11.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Inference Phase and ASP Overhead}{13}{subsection.11.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images).}}{14}{table.caption.6}\protected@file@percent }
 \newlabel{tab:inference_raw}{{3}{14}{Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images)}{table.caption.6}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Computational time breakdown for the complete Neuro-Symbolic pipeline (NN + ASP) evaluated on a 1,000-image subset.}}{14}{table.caption.7}\protected@file@percent }
 \newlabel{tab:inference_hybrid}{{4}{14}{Computational time breakdown for the complete Neuro-Symbolic pipeline (NN + ASP) evaluated on a 1,000-image subset}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Inference Phase and ASP Overhead}{14}{subsection.11.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Model Complexity and Hardware Footprint}{14}{subsection.11.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {12}Discussion and Limitations}{14}{section.12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}The Clinical Trade-off: Statistical Thresholding vs. Neuro-Symbolic Rescue}{14}{subsection.12.1}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4.}}{15}{table.caption.8}\protected@file@percent }
 \newlabel{tab:hardware_metrics}{{5}{15}{Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}The Clinical Trade-off: Statistical Thresholding vs. Neuro-Symbolic Rescue}{15}{subsection.12.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Computational Overhead}{15}{subsection.12.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.3}Generalization and Rule Engineering}{15}{subsection.12.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {12.4}Evaluating a BD-CeNN Autoencoder Pre-processing Hypothesis}{15}{subsection.12.4}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Confusion matrices demonstrating the performance degradation of the BD-CeNN Autoencoder hypothesis under varying levels of Gaussian noise. Note the severe drop in Accuracy and the spike in False Positives at the 90\% noise level due to image over-smoothing.}}{16}{figure.caption.9}\protected@file@percent }
 \newlabel{fig:autoencoder_noise}{{15}{16}{Confusion matrices demonstrating the performance degradation of the BD-CeNN Autoencoder hypothesis under varying levels of Gaussian noise. Note the severe drop in Accuracy and the spike in False Positives at the 90\% noise level due to image over-smoothing}{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {13}Conclusion and Future Work}{16}{section.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}Expert-Driven Rule Engineering}{16}{subsection.13.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}Expert-Driven Rule Engineering}{17}{subsection.13.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {13.2}Dataset Diversity and Scale}{17}{subsection.13.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {13.3}Computational Scaling}{17}{subsection.13.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model Accuracy across increasing levels of Gaussian Noise.}}{18}{table.caption.12}\protected@file@percent }
-\newlabel{tab:noise_accuracy}{{6}{18}{Model Accuracy across increasing levels of Gaussian Noise}{table.caption.12}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Detailed Noise Robustness Results}{18}{appendix.A}\protected@file@percent }
-\newlabel{sec:appendix_matrices}{{A}{18}{Detailed Noise Robustness Results}{appendix.A}{}}
-\newlabel{fig:sub_resnet}{{16a}{19}{ResNet (Standard)}{figure.caption.13}{}}
-\newlabel{sub@fig:sub_resnet}{{a}{19}{ResNet (Standard)}{figure.caption.13}{}}
-\newlabel{fig:sub_seresnet}{{16b}{19}{SE-ResNet}{figure.caption.13}{}}
-\newlabel{sub@fig:sub_seresnet}{{b}{19}{SE-ResNet}{figure.caption.13}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance.}}{19}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:noise_comparison_p1}{{16}{19}{Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance}{figure.caption.13}{}}
-\newlabel{fig:sub_efficientnet}{{16c}{20}{EfficientNet-B0}{figure.caption.14}{}}
-\newlabel{sub@fig:sub_efficientnet}{{c}{20}{EfficientNet-B0}{figure.caption.14}{}}
-\newlabel{fig:sub_nocenn}{{16d}{20}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
-\newlabel{sub@fig:sub_nocenn}{{d}{20}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 2).}}{20}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:noise_comparison_p2}{{16}{20}{Detailed Confusion Matrices across different architectures (Part 2)}{figure.caption.14}{}}
-\newlabel{fig:sub_nostro}{{16e}{21}{Proposed Hybrid CeNN}{figure.caption.15}{}}
-\newlabel{sub@fig:sub_nostro}{{e}{21}{Proposed Hybrid CeNN}{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 3)}}{21}{figure.caption.15}\protected@file@percent }
-\newlabel{fig:noise_comparison_p3}{{16}{21}{Detailed Confusion Matrices across different architectures (Part 3)}{figure.caption.15}{}}
 \bibstyle{elsarticle-num}
 \bibdata{cas-refs}
 \bibcite{densenet}{{1}{}{{}}{{}}}
@@ -181,6 +161,26 @@
 \bibcite{he2016deep}{{11}{}{{}}{{}}}
 \bibcite{hu2018squeeze}{{12}{}{{}}{{}}}
 \bibcite{tan2019efficientnet}{{13}{}{{}}{{}}}
-\csxdef{lastpage}{22}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Detailed Noise Robustness Results}{20}{appendix.A}\protected@file@percent }
+\newlabel{sec:appendix_matrices}{{A}{20}{Detailed Noise Robustness Results}{appendix.A}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model Accuracy across increasing levels of Gaussian Noise. \textit  {Note: These benchmarks were conducted on a representative subset of the test data to accommodate the computational overhead of multi-level noise injection; baseline values (0\%) may therefore differ slightly from full-dataset results in Table \ref {tab:master_results}.}}}{20}{table.6}\protected@file@percent }
+\newlabel{tab:noise_accuracy}{{6}{20}{Model Accuracy across increasing levels of Gaussian Noise. \textit {Note: These benchmarks were conducted on a representative subset of the test data to accommodate the computational overhead of multi-level noise injection; baseline values (0\%) may therefore differ slightly from full-dataset results in Table \ref {tab:master_results}.}}{table.6}{}}
+\csxdef{lastpage}{21}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-\gdef \@abspage@last{22}
+\newlabel{fig:sub_resnet}{{16a}{21}{ResNet (Standard)}{figure.caption.13}{}}
+\newlabel{sub@fig:sub_resnet}{{a}{21}{ResNet (Standard)}{figure.caption.13}{}}
+\newlabel{fig:sub_seresnet}{{16b}{21}{SE-ResNet}{figure.caption.13}{}}
+\newlabel{sub@fig:sub_seresnet}{{b}{21}{SE-ResNet}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance.}}{21}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:noise_comparison_p1}{{16}{21}{Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance}{figure.caption.13}{}}
+\newlabel{fig:sub_efficientnet}{{16c}{22}{EfficientNet-B0}{figure.caption.14}{}}
+\newlabel{sub@fig:sub_efficientnet}{{c}{22}{EfficientNet-B0}{figure.caption.14}{}}
+\newlabel{fig:sub_nocenn}{{16d}{22}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
+\newlabel{sub@fig:sub_nocenn}{{d}{22}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 2).}}{22}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:noise_comparison_p2}{{16}{22}{Detailed Confusion Matrices across different architectures (Part 2)}{figure.caption.14}{}}
+\newlabel{fig:sub_nostro}{{16e}{23}{Proposed Hybrid CeNN}{figure.caption.15}{}}
+\newlabel{sub@fig:sub_nostro}{{e}{23}{Proposed Hybrid CeNN}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 3)}}{23}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:noise_comparison_p3}{{16}{23}{Detailed Confusion Matrices across different architectures (Part 3)}{figure.caption.15}{}}
+\gdef \@abspage@last{23}

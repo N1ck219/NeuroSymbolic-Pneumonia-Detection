@@ -1,28 +1,5 @@
-% %% 
-% %% Copyright 2019-2024 Elsevier Ltd
-% %% 
-% %% Version 2.4
-% %% 
-% %% This file is part of the 'CAS Bundle'.
-% %% --------------------------------------
-% %% 
-% %% It may be distributed under the conditions of the LaTeX Project Public
-% %% License, either version 1.2 of this license or (at your option) any
-% %% later version.  The latest version of this license is in
-% %%    http://www.latex-project.org/lppl.txt
-% %% and version 1.2 or later is part of all distributions of LaTeX
-% %% version 1999/12/01 or later.
-% %% 
-% %% The list of all files belonging to the 'CAS Bundle' is
-% %% given in the file `manifest.txt'.
-% %% 
-% %% Template article for cas-dc documentclass for 
-% %% double column output.
-
-% Tieni solo un documentclass
 \documentclass[a4paper,fleqn]{cas-dc}
 
-% Tieni solo un pacchetto natbib (quello numerico è il più usato per le scienze esatte)
 \usepackage[numbers]{natbib}
 \usepackage{graphicx}
 \usepackage{xcolor}
@@ -32,38 +9,39 @@
 \usepackage{booktabs}
 \usepackage{subcaption}
 \usepackage{hyperref}
+\usepackage{cuted}
 
-% Definiamo alcuni colori eleganti
+\usepackage{amsthm}
+\newtheorem*{note}{Note}
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{backcolour}{rgb}{0.97,0.97,0.97} % Grigio chiarissimo per lo sfondo
+\definecolor{backcolour}{rgb}{0.97,0.97,0.97} 
 
-% Creiamo il nostro stile personalizzato
 \lstdefinestyle{mystyle}{
 	backgroundcolor=\color{backcolour},   
-	commentstyle=\color{codegreen}\itshape, % Commenti verdi e in corsivo
-	keywordstyle=\color{blue}\bfseries,     % Parole chiave blu e in grassetto
-	numberstyle=\tiny\color{codegray},      % Numeri di riga piccolini e grigi
-	basicstyle=\ttfamily\footnotesize,      % Font "macchina da scrivere" piccolo
+	commentstyle=\color{codegreen}\itshape, 
+	keywordstyle=\color{blue}\bfseries,     
+	numberstyle=\tiny\color{codegray},      
+	basicstyle=\ttfamily\footnotesize,     
 	breakatwhitespace=false,         
-	breaklines=true,                 % A capo automatico di emergenza
-	captionpos=b,                    % Didascalia in basso (se la usi)
-	keepspaces=true,                 % Mantiene le indentazioni
-	numbers=none,                    % Metti "left" se vuoi i numeri di riga
+	breaklines=true,                
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=none,                   
 	showspaces=false,                
 	showstringspaces=false,
 	showtabs=false,                  
-	tabsize=4,                       % Dimensione del TAB
-	frame=single,                    % Bordo sottile attorno al codice
-	rulecolor=\color{lightgray}      % Colore del bordo
+	tabsize=4,                      
+	frame=single,                    
+	rulecolor=\color{lightgray}      
 }
 
-% Diciamo a LaTeX di usare sempre questo stile
 \lstset{style=mystyle, 
-	aboveskip=10pt,  % Spazio sopra il box
-	belowskip=10pt   % Spazio sotto il box (prima di "This rule...")
+	aboveskip=10pt,  
+	belowskip=10pt   
 }
-%%%Author definitions
+
 \def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
 \tsc{WGM}
 \tsc{QE}
@@ -81,9 +59,9 @@
 \def\floatpagepagefraction{1}
 \def\textpagefraction{.001}
 
-% --- Titoli Brevi per l'intestazione delle pagine ---
-\shorttitle{A Neuro-Symbolic Architecture for Pneumonia Detection} % Titolo breve aggiornato e accademico
-\shortauthors{N. Flego et al.} % Aggiunto "et al." per la presenza di coautori
+
+\shorttitle{A Neuro-Symbolic Architecture for Pneumonia Detection} 
+\shortauthors{N. Flego et al.} 
 
 % --- Titolo Principale ---
 \title[mode = title]{A Neuro-Symbolic Hybrid Architecture for Robust Pneumonia Detection and Localization in Chest X-rays} 
@@ -720,7 +698,14 @@ A critical distinction regarding the initialization and training protocol must b
 When analyzing these models, a critical architectural distinction must be made. ResNet, SE-ResNet, and EfficientNet-B0 act as dedicated single-task classifiers. In contrast, the proposed architecture employs a Multi-Task Learning (MTL) strategy, simultaneously performing binary classification and high-resolution bounding box regression. Solving two complex spatial and semantic tasks with a shared feature extractor introduces a heavier optimization burden. However, this dual capability makes the proposed system significantly more valuable for clinical triage.
 
 \subsection{Experimental Setup}
-The test set was subjected to progressive levels of Gaussian noise injection (0\%, 15\%, 30\%, 45\%, 60\%, and 90\% variance limits). The models were evaluated on their classification accuracy under these corrupted conditions to measure structural resilience. Detailed confusion matrices for all evaluated models across the entire noise spectrum, along with the exact numerical results, are provided in Appendix \ref{sec:appendix_matrices} (see Table \ref{tab:noise_robustness} and Figure \ref{fig:noise_comparison_p1}).
+The noise robustness evaluation was conducted on a representative, balanced subset of the test set. This choice was necessitated by the high computational cost of performing inference across five different architectures, each subjected to six progressive levels of Gaussian noise (0\%, 15\%, 30\%, 45\%, 60\%, and 90\% variance limits). 
+
+The models were evaluated on their classification accuracy under these corrupted conditions to measure structural resilience. Detailed confusion matrices for all evaluated models across the entire noise spectrum, along with the exact numerical results, are provided in Appendix \ref{sec:appendix_matrices} (see Table \ref{tab:noise_accuracy} and Figure \ref{fig:noise_comparison_p1}).
+
+\begin{note}
+	Due to the different scale of the evaluation set, the baseline metrics (0\% noise) reported in this comparative analysis may show slight numerical variations compared to the results obtained on the full RSNA dataset reported in Section \ref{sec:asp_methodology}. However, the subset remains statistically consistent, ensuring the validity of the observed performance degradation curves.
+\end{note}
+
 
 This experimental design allows us to observe not only the peak performance in ideal conditions but also the "rate of decay" of each architecture. By training all models on the same data, we ensure that any observed robustness is a direct result of the architectural components (such as the CeNN frontend or SE blocks) rather than differences in data exposure.
 
@@ -898,7 +883,7 @@ Despite these limitations, the proposed architecture successfully bridges the ga
 \section*{Code Availability}
 To ensure full transparency and reproducibility of the experiments presented in this study, the complete and modular Python codebase has been made publicly available. The repository includes the neural network architectures, the multi-task training pipeline, the hardware profiling scripts, and the declarative Answer Set Programming (ASP) rules (.lp files) used for the neuro-symbolic semantic validation. 
 
-The source code, along with detailed setup instructions, can be accessed on GitHub at: \url{https://github.com/TUO_USERNAME/SmallProject_CeNN_ASP}
+The source code, along with detailed setup instructions, can be accessed on GitHub at: \url{https://github.com/N1ck219/NeuroSymbolic-Pneumonia-Detection}
 
 Due to file size constraints, the pre-trained model weights (.pth files) are hosted externally on a dedicated cloud storage drive. The download links and instructions for replicating the inference and noise robustness tests are thoroughly documented within the repository's \texttt{README.md} file.
 
@@ -908,32 +893,24 @@ During the preparation of this work, the author used Google Gemini to assist in 
 
 Finally, during the writing process, the author drafted the foundational structure of the manuscript in their native language, and Gemini was used to translate the text and refine the academic tone and phrasing. After using these tools, the author thoroughly reviewed and edited all contents as needed, and takes full and sole responsibility for the accuracy, originality, and integrity of the final publication.
 
+
+\clearpage 
+
+\bibliographystyle{elsarticle-num} 
+\bibliography{cas-refs}
+
+\clearpage 
+	
 \appendix
 \section{Detailed Noise Robustness Results}
 \label{sec:appendix_matrices}
 
+\begin{strip}
 This appendix provides the comprehensive evaluation metrics and the detailed confusion matrices for all the architectures tested during the noise robustness benchmarking discussed in Section \ref{sec:comparative_analysis}.
 
-%\begin{table*}[htbp]
-%	\centering
-%	\caption{Model Accuracy across increasing levels of Gaussian Noise.}
-%	\label{tab:noise_robustness}
-%	\resizebox{0.8\textwidth}{!}{%
-%		\begin{tabular}{lcccccc}
-%			\hline
-%			\textbf{Model} & \textbf{0\%} & \textbf{15\%} & \textbf{30\%} & \textbf{45\%} & \textbf{60\%} & \textbf{90\%} \\ \hline
-%			ResNet (Standard) & \textbf{86.10\%} & 83.47\% & 83.35\% & 82.35\% & 79.35\% & 67.85\% \\
-%			SE-ResNet & 86.02\% & 81.33\% & \textbf{83.12\%} & 82.65\% & 82.47\% & \textbf{81.25\%} \\
-%			EfficientNet-B0 & 87.40\% & \textbf{83.58\%} & 82.80\% & \textbf{82.83\%} & \textbf{82.90\%} & 81.17\% \\
-%			Without CeNN (Ablation) & 83.30\% & 81.27\% & 81.55\% & 81.83\% & 79.40\% & 46.17\% \\ \hline
-%			\textbf{Proposed CeNN Hybrid} & 82.35\% & 80.67\% & 80.67\% & 80.23\% & 79.67\% & 78.50\% \\ \hline
-%		\end{tabular}%
-%	}
-%\end{table*}
-
-\begin{table*}[h]
+	\vspace{1em}
 	\centering
-	\caption{Model Accuracy across increasing levels of Gaussian Noise.}
+	\captionof{table}{Model Accuracy across increasing levels of Gaussian Noise. \textit{Note: These benchmarks were conducted on a representative subset of the test data to accommodate the computational overhead of multi-level noise injection; baseline values (0\%) may therefore differ slightly from full-dataset results in Table \ref{tab:master_results}.}}
 	\label{tab:noise_accuracy}
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{lcccccc}
@@ -948,7 +925,11 @@ This appendix provides the comprehensive evaluation metrics and the detailed con
 			\hline
 		\end{tabular}%
 	}
-\end{table*}
+
+
+\end{strip}
+
+\clearpage
 
 % --- BLOCCO 1: Prime due immagini ---
 \begin{figure*}[htbp]
@@ -1009,13 +990,6 @@ This appendix provides the comprehensive evaluation metrics and the detailed con
 	\caption{Detailed Confusion Matrices across different architectures (Part 3)}
 	\label{fig:noise_comparison_p3}
 \end{figure*}
-
-
-\clearpage 
-
-\bibliographystyle{elsarticle-num} 
-\bibliography{cas-refs}
-	
 	% \section{Bibliography styles}
 	
 	% There are various bibliography styles available. You can select the
