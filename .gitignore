@@ -20,6 +20,8 @@ env/
 # =========================
 .DS_Store
 Thumbs.db
+*.ini
+desktop.ini
 
 # =========================
 # DEEP LEARNING & DATA

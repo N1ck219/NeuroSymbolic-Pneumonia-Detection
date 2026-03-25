@@ -22,8 +22,8 @@ SAVE_DIR = os.path.join("..", "results", "confusion_matrix_noise")
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 print("\n========================================================")
-print("   AVVIO TEST DI ROBUSTEZZA AL RUMORE (TUTTI I MODELLI)  ")
-print(f"   Salvataggio in: {SAVE_DIR}")
+print("   STARTING ROBUSTNESS TEST TO NOISE (ALL MODELS)  ")
+print(f"   Saving in: {SAVE_DIR}")
 print("========================================================\n")
 
 def add_noise(img_tensor, noise_factor):

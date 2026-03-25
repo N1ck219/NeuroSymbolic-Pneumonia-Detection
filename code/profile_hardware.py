@@ -8,16 +8,15 @@ import timm
 from thop import profile
 import pandas as pd
 
-# Import dai moduli locali
 from settings import DEVICE, BATCH_SIZE, CSV_PATH, TRAIN_IMG_PATH, IMG_SIZE
 from dataset import get_dataloaders
 from models import HighResPneumoniaDetector, NoCeNNPneumoniaDetector 
 
 print("\n========================================================")
-print("   AVVIO PROFILAZIONE HARDWARE E COMPLESSITÀ MODELLI    ")
+print("   STARTING HARDWARE PROFILING AND MODEL COMPLEXITY ANALYSIS    ")
 print("========================================================\n")
 
-# --- 1. FUNZIONI DI SUPPORTO ---
+# --- 1. SUPPORT FUNCTIONS ---
 def get_model_complexity_info(model, input_size=(1, 1, IMG_SIZE, IMG_SIZE), device=DEVICE):
     total_params = sum(p.numel() for p in model.parameters())
     model_size_mb = (total_params * 4) / (1024 ** 2)
@@ -56,7 +55,7 @@ def measure_inference_speed(model, dataloader, device=DEVICE, num_batches=20):
 if __name__ == "__main__":
     _, val_loader = get_dataloaders(CSV_PATH, TRAIN_IMG_PATH)
     
-    # --- 2. INIZIALIZZAZIONE MODELLI ---
+    # --- 2. MODEL INITIALIZATION ---
     models_dict = {}
 
     # A. ResNet50 
@@ -75,19 +74,19 @@ if __name__ == "__main__":
     seresnet = timm.create_model('seresnet50', pretrained=False, in_chans=1, num_classes=1)
     models_dict["SE-ResNet50 (Baseline)"] = seresnet
 
-    # D. ABLATION STUDY: Tuo Modello SENZA CeNN
+    # D. ABLATION STUDY: Model WITHOUT CeNN
     no_cenn_model = NoCeNNPneumoniaDetector()
     models_dict["Ablation: No CeNN"] = no_cenn_model
 
-    # E. PROPOSED MODEL: Tuo Modello CON CeNN originale
+    # E. PROPOSED MODEL: Model WITH CeNN
     hybrid_model = HighResPneumoniaDetector()
     models_dict["Proposed Hybrid CeNN"] = hybrid_model
 
-    # --- 3. ESECUZIONE PROFILAZIONE ---
+    # --- 3. PROFILING EXECUTION ---
     hw_results = []
 
     for name, net in models_dict.items():
-        print(f"\n[INFO] Profilazione in corso per: {name}...")
+        print(f"\n[INFO] Profiling: {name}...")
         net = net.to(DEVICE)
         
         tot_p, size_mb, flops = get_model_complexity_info(net, device=DEVICE)
@@ -106,19 +105,19 @@ if __name__ == "__main__":
         del net
         torch.cuda.empty_cache()
 
-    # --- 4. STAMPA E SALVATAGGIO ---
+    # --- 4. PRINT AND SAVE ---
     df_hw = pd.DataFrame(hw_results)
     df_hw = df_hw.round(2)
 
     print("\n" + "="*80)
-    print("                      REPORT COMPLESSITÀ E RISORSE DEFINITIVO                      ")
+    print("                      FINAL COMPLEXITY AND RESOURCE REPORT                      ")
     print("="*80)
     print(df_hw.to_markdown(index=False))
 
-    # Setup Directory di salvataggio
+    # Setup Directory
     save_dir = os.path.join("..", "results", "hardware_profiling")
     os.makedirs(save_dir, exist_ok=True)
     
     csv_filename = os.path.join(save_dir, "hardware_comparison_metrics_final.csv")
     df_hw.to_csv(csv_filename, index=False, sep=';', decimal=',')
-    print(f"\n[SUCCESS] Dati esportati in '{csv_filename}'! Pronti per la tesi.")
+    print(f"\n[SUCCESS] Data exported to '{csv_filename}'")
