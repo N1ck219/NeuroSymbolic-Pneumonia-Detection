@@ -1,0 +1,40 @@
+# =========================
+# PYTHON & ENVIRONMENTS
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# =========================
+# JUPYTER & IDE
+# =========================
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# =========================
+# OS GENERATED
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# DEEP LEARNING & DATA
+# =========================
+# IGNORA I PESI DEI MODELLI (GitHub ha un limite di 100MB per file!)
+*.pth
+*.pt
+*.ckpt
+
+# Ignora eventuali dataset scaricati (adatta il percorso se necessario)
+*.dcm
+*.jpg
+*.jpeg
+stage_2_train_images/
+stage_2_train_labels.csv
+
+# Se vuoi ignorare tutti i risultati generati automaticamente e le immagini (decommenta la riga sotto)
+# results/

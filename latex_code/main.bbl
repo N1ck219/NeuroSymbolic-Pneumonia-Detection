@@ -1,0 +1,88 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{densenet}
+G.~Huang, Z.~Liu, L.~van~der Maaten, K.~Q. Weinberger,
+  \href{https://arxiv.org/abs/1608.06993}{Densely connected convolutional
+  networks} (2018).
+\newblock \href {http://arxiv.org/abs/1608.06993} {\path{arXiv:1608.06993}}.
+\newline\urlprefix\url{https://arxiv.org/abs/1608.06993}
+
+\bibitem{CeNN}
+L.~Chua, L.~Yang, Cellular neural networks: theory, IEEE Transactions on
+  Circuits and Systems 35~(10) (1988) 1257--1272.
+\newblock \href {https://doi.org/10.1109/31.7600} {\path{doi:10.1109/31.7600}}.
+
+\bibitem{kubakisa20XXnoisy}
+C.~Kutabuna~Kubakisa, I.~Lukusa~Kayembe, K.~Kyamakya, D.~Kayeye~Kabeya,
+  W.~Vianney~Kambale, H.~D. Vankayalapati, Noisy pixels, credible decisions - a
+  robust, edge-ready neuro-symbolic architecture for rural (african) clinics,
+  in: IEEE AFRICON (Work-in-progress), IEEE, 20XX.
+
+\bibitem{asp}
+V.~Lifschitz, \href{http://www.cs.utexas.edu/users/ai-lab?lif08}{What is answer
+  set programming?}, in: Proceedings of the AAAI Conference on Artificial
+  Intelligence, MIT Press, 2008, pp. 1594--1597.
+\newline\urlprefix\url{http://www.cs.utexas.edu/users/ai-lab?lif08}
+
+\bibitem{rsna-pneumonia-detection-challenge}
+M.~Anouk~Stein, C.~Wu, C.~Carr, G.~Shih, J.~Dulkowski, kalpathy, L.~Chen,
+  L.~Prevedello, M.~Marc~Kohli, M.~McDonald, Peter, P.~Culliton, S.~H. MD,
+  T.~Xia, Rsna pneumonia detection challenge,
+  \url{https://kaggle.com/competitions/rsna-pneumonia-detection-challenge},
+  kaggle (2018).
+
+\bibitem{NIH-chest-xray}
+N.~I. of~Health Chest X-Ray~Dataset, Nih chest x-rays,
+  \url{https://www.kaggle.com/datasets/nih-chest-xrays/data}, kaggle (2018).
+
+\bibitem{albumentations}
+A.~Buslaev, V.~I. Iglovikov, E.~Khvedchenya, A.~Parinov, M.~Druzhinin, A.~A.
+  Kalinin, \href{http://dx.doi.org/10.3390/info11020125}{Albumentations: Fast
+  and flexible image augmentations}, Information 11~(2) (2020) 125.
+\newblock \href {https://doi.org/10.3390/info11020125}
+  {\path{doi:10.3390/info11020125}}.
+\newline\urlprefix\url{http://dx.doi.org/10.3390/info11020125}
+
+\bibitem{torchxray}
+J.~P. Cohen, J.~D. Viviano, P.~Bertin, P.~Morrison, P.~Torabian, M.~Guarrera,
+  M.~P. Lungren, A.~Chaudhari, R.~Brooks, M.~Hashir, H.~Bertrand,
+  \href{https://arxiv.org/abs/2111.00595}{Torchxrayvision: A library of chest
+  x-ray datasets and models} (2021).
+\newblock \href {http://arxiv.org/abs/2111.00595} {\path{arXiv:2111.00595}}.
+\newline\urlprefix\url{https://arxiv.org/abs/2111.00595}
+
+\bibitem{cbam}
+S.~Woo, J.~Park, J.-Y. Lee, I.~S. Kweon,
+  \href{https://arxiv.org/abs/1807.06521}{Cbam: Convolutional block attention
+  module} (2018).
+\newblock \href {http://arxiv.org/abs/1807.06521} {\path{arXiv:1807.06521}}.
+\newline\urlprefix\url{https://arxiv.org/abs/1807.06521}
+
+\bibitem{gebser2018multishotaspsolvingclingo}
+M.~Gebser, R.~Kaminski, B.~Kaufmann, T.~Schaub,
+  \href{https://arxiv.org/abs/1705.09811}{Multi-shot asp solving with clingo}
+  (2018).
+\newblock \href {http://arxiv.org/abs/1705.09811} {\path{arXiv:1705.09811}}.
+\newline\urlprefix\url{https://arxiv.org/abs/1705.09811}
+
+\bibitem{he2016deep}
+K.~He, X.~Zhang, S.~Ren, J.~Sun, Deep residual learning for image recognition,
+  in: Proceedings of the IEEE conference on computer vision and pattern
+  recognition, 2016, pp. 770--778.
+
+\bibitem{hu2018squeeze}
+J.~Hu, L.~Shen, G.~Sun, Squeeze-and-excitation networks, in: Proceedings of the
+  IEEE conference on computer vision and pattern recognition, 2018, pp.
+  7132--7141.
+
+\bibitem{tan2019efficientnet}
+M.~Tan, Q.~Le, Efficientnet: Rethinking model scaling for convolutional neural
+  networks, in: International conference on machine learning, PMLR, 2019, pp.
+  6105--6114.
+
+\end{thebibliography}

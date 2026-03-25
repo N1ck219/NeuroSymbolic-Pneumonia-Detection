@@ -1,0 +1,186 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\csgdef{mark@corau1}{1}
+\emailauthor{n1flego@edu.aau.at}{Nicola Flego}
+\creditauthor{Conceptualization, Software Development, Data Analysis, Writing - Original Draft}{Nicola Flego}
+\emailauthor{filippopi@edu.aau.at}{Filippo Pilutti}
+\creditauthor{Conceptualization, Software Development, Data Analysis}{Filippo Pilutti}
+\emailauthor{mohamed.elbahnasawi@aau.at}{Mohamed El Bahnasawi}
+\creditauthor{Supervision}{Mohamed El Bahnasawi}
+\emailauthor{kyandoghere.kyamakya@aau.at}{Kyandoghere Kyamakya}
+\creditauthor{Supervision}{Kyandoghere Kyamakya}
+\NewLabel{cor1}{1}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{1}{section.2}\protected@file@percent }
+\citation{densenet}
+\citation{CeNN}
+\citation{kubakisa20XXnoisy}
+\citation{asp}
+\citation{kubakisa20XXnoisy}
+\citation{rsna-pneumonia-detection-challenge}
+\citation{NIH-chest-xray}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Related Work}{2}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Dataset and Pre-processing}{2}{section.3}\protected@file@percent }
+\newlabel{sec:dataset}{{3}{2}{Dataset and Pre-processing}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Dataset Description}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Data Partitioning and Balancing}{2}{subsection.3.2}\protected@file@percent }
+\citation{albumentations}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Class distribution over the dataset.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:class_dis}{{1}{3}{Class distribution over the dataset}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Image Pre-processing}{3}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Label Formatting}{3}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Data Augmentation}{3}{subsection.3.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Horizontal Flip.}}{3}{figure.2}\protected@file@percent }
+\newlabel{fig:hor}{{2}{3}{Horizontal Flip}{figure.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Shift-Scale Rotate.}}{3}{figure.3}\protected@file@percent }
+\newlabel{fig:shift}{{3}{3}{Shift-Scale Rotate}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Random Brightness.}}{3}{figure.4}\protected@file@percent }
+\newlabel{fig:Bright}{{4}{3}{Random Brightness}{figure.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Contrast adjustment.}}{3}{figure.5}\protected@file@percent }
+\newlabel{fig:contr}{{5}{3}{Contrast adjustment}{figure.5}{}}
+\citation{CeNN}
+\citation{densenet}
+\citation{torchxray}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gaussian noise.}}{4}{figure.6}\protected@file@percent }
+\newlabel{fig:gauss}{{6}{4}{Gaussian noise}{figure.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Proposed Architecture}{4}{section.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Overview of the proposed architecture.}}{4}{figure.7}\protected@file@percent }
+\newlabel{fig:schema}{{7}{4}{Overview of the proposed architecture}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Cellular Neural Network (CeNN) Frontend}{4}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Mathematical Formulation}{4}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Discrete-Time Implementation}{4}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3}Learnable Dynamics and Constraints}{4}{subsubsection.4.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Enforced Bistability}{4}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Adaptive Integration Step ($\alpha $)}{4}{section*.2}\protected@file@percent }
+\citation{cbam}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Feature Extraction Backbone}{5}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Architecture Justification}{5}{subsubsection.4.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Domain-Specific Transfer Learning}{5}{subsubsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Attention module: CBAM}{5}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.1}Channel Attention Module (CAM)}{5}{subsubsection.4.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.2}Spatial Attention Module (SAM)}{5}{subsubsection.4.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.3.3}Justification for Integration}{6}{subsubsection.4.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5}Multi-Task Output Architecture}{6}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Classification Head}{6}{subsection.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Localization Head (Regression)}{6}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Conditional Inference Strategy}{6}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Qualitative Output Analysis}{6}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:qualitative_output}{{5.3}{6}{Qualitative Output Analysis}{subsection.5.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Example of results.}}{7}{figure.8}\protected@file@percent }
+\newlabel{fig:result}{{8}{7}{Example of results}{figure.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Loss Function and Optimization Objective}{7}{section.6}\protected@file@percent }
+\newlabel{eq:total_loss}{{7}{7}{Loss Function and Optimization Objective}{equation.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Classification Loss ($\mathcal  {L}_{cls}$)}{7}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Localization Loss - Conditional Masking ($\mathcal  {L}_{loc}^*$)}{7}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1}The Masking Mechanism}{7}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Optimization Strategy}{7}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Semantic Validation via Answer Set Programming (ASP)}{7}{section.7}\protected@file@percent }
+\newlabel{sec:asp_methodology}{{7}{7}{Semantic Validation via Answer Set Programming (ASP)}{section.7}{}}
+\citation{gebser2018multishotaspsolvingclingo}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Neuro-Symbolic Integration Strategy}{8}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Knowledge Base and Logical Constraints}{8}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1}Universal Baseline Rules}{8}{subsubsection.7.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2}Configuration A: Zone-Aware Logic (Smart Heart)}{8}{subsubsection.7.2.2}\protected@file@percent }
+\newlabel{sec:a_rule}{{7.2.2}{8}{Configuration A: Zone-Aware Logic (Smart Heart)}{subsubsection.7.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.3}Configuration B: Shape-Based Rescue (Organic)}{8}{subsubsection.7.2.3}\protected@file@percent }
+\newlabel{sec:b_rule}{{7.2.3}{8}{Configuration B: Shape-Based Rescue (Organic)}{subsubsection.7.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Final Decision Logic}{8}{subsection.7.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Training Methodology}{9}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Data Setup and Regularization}{9}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Transfer Learning and Layer Freezing Strategy}{9}{subsection.8.2}\protected@file@percent }
+\newlabel{sec:transf_learn}{{8.2}{9}{Transfer Learning and Layer Freezing Strategy}{subsection.8.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Gradient Accumulation and Virtual Batch Size}{9}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Optimization and Learning Rate Scheduling}{9}{subsection.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Training Convergence and Stability}{10}{subsection.8.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Training and validation loss curves over the epochs. The red dashed line marks the "Unfreeze" point, transitioning from the warmup phase (frozen backbone) to full-network fine-tuning.}}{10}{figure.9}\protected@file@percent }
+\newlabel{fig:loss_curve}{{9}{10}{Training and validation loss curves over the epochs. The red dashed line marks the "Unfreeze" point, transitioning from the warmup phase (frozen backbone) to full-network fine-tuning}{figure.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Results and Evaluation}{10}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Deep Learning Pipeline Performance and Threshold Optimization}{10}{subsection.9.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Threshold optimization search on the validation subset. The threshold of 0.4 provides the best F1-Score and a strong Recall, making it optimal for medical screening.}}{10}{table.caption.4}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tab:thresh_search}{{1}{10}{Threshold optimization search on the validation subset. The threshold of 0.4 provides the best F1-Score and a strong Recall, making it optimal for medical screening}{table.caption.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Confusion Matrix evaluated with the default 0.5 classification threshold.}}{10}{figure.10}\protected@file@percent }
+\newlabel{fig:risultati_05}{{10}{10}{Confusion Matrix evaluated with the default 0.5 classification threshold}{figure.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Confusion Matrix evaluated with the optimized 0.4 classification threshold.}}{11}{figure.11}\protected@file@percent }
+\newlabel{fig:risultati_04}{{11}{11}{Confusion Matrix evaluated with the optimized 0.4 classification threshold}{figure.11}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Localization Accuracy and Metric Recontextualization}{11}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Impact of Semantic Validation (Neuro-Symbolic ASP)}{11}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.1}Configuration A: Zone-Aware Logic (Smart Heart)}{11}{subsubsection.9.3.1}\protected@file@percent }
+\citation{he2016deep}
+\citation{hu2018squeeze}
+\citation{tan2019efficientnet}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Performance of the Zone-Aware (Smart Heart) ASP configuration compared to the raw neural network at the baseline 0.5 threshold.}}{12}{figure.12}\protected@file@percent }
+\newlabel{fig:asp_smart_heart}{{12}{12}{Performance of the Zone-Aware (Smart Heart) ASP configuration compared to the raw neural network at the baseline 0.5 threshold}{figure.12}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.3.2}Configuration B: Shape-Based Rescue (Organic)}{12}{subsubsection.9.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Performance of the Shape-Based (Organic) ASP configuration. Prioritizing biological shape plausibility drastically reduces False Negatives.}}{12}{figure.13}\protected@file@percent }
+\newlabel{fig:asp_organic}{{13}{12}{Performance of the Shape-Based (Organic) ASP configuration. Prioritizing biological shape plausibility drastically reduces False Negatives}{figure.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Comparative Analysis and Noise Robustness Benchmarking}{12}{section.10}\protected@file@percent }
+\newlabel{sec:comparative_analysis}{{10}{12}{Comparative Analysis and Noise Robustness Benchmarking}{section.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Evaluated Architectures and Training Setup}{12}{subsection.10.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Comprehensive performance comparison across different classification strategies on the full test dataset. The Neuro-Symbolic (Organic) approach maximizes Recall and minimizes False Negatives, making it the safest configuration for clinical screening.}}{13}{table.caption.5}\protected@file@percent }
+\newlabel{tab:master_results}{{2}{13}{Comprehensive performance comparison across different classification strategies on the full test dataset. The Neuro-Symbolic (Organic) approach maximizes Recall and minimizes False Negatives, making it the safest configuration for clinical screening}{table.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Experimental Setup}{13}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Results and Discussion}{13}{subsection.10.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Performance degradation of the evaluated architectures under increasing levels of Gaussian noise.}}{13}{figure.14}\protected@file@percent }
+\newlabel{fig:noise_line_chart}{{14}{13}{Performance degradation of the evaluated architectures under increasing levels of Gaussian noise}{figure.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Computational Efficiency and Inference Times}{13}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1}Training Phase}{13}{subsection.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2}Inference Phase and ASP Overhead}{13}{subsection.11.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images).}}{14}{table.caption.6}\protected@file@percent }
+\newlabel{tab:inference_raw}{{3}{14}{Inference benchmark for the raw Neural Network evaluated on the full dataset (26,684 images)}{table.caption.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Computational time breakdown for the complete Neuro-Symbolic pipeline (NN + ASP) evaluated on a 1,000-image subset.}}{14}{table.caption.7}\protected@file@percent }
+\newlabel{tab:inference_hybrid}{{4}{14}{Computational time breakdown for the complete Neuro-Symbolic pipeline (NN + ASP) evaluated on a 1,000-image subset}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.3}Model Complexity and Hardware Footprint}{14}{subsection.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {12}Discussion and Limitations}{14}{section.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1}The Clinical Trade-off: Statistical Thresholding vs. Neuro-Symbolic Rescue}{14}{subsection.12.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4.}}{15}{table.caption.8}\protected@file@percent }
+\newlabel{tab:hardware_metrics}{{5}{15}{Hardware complexity, inference times, and resource consumption evaluated at a resolution of 512x512 with a batch size of 4}{table.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.2}Computational Overhead}{15}{subsection.12.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.3}Generalization and Rule Engineering}{15}{subsection.12.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.4}Evaluating a BD-CeNN Autoencoder Pre-processing Hypothesis}{15}{subsection.12.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Confusion matrices demonstrating the performance degradation of the BD-CeNN Autoencoder hypothesis under varying levels of Gaussian noise. Note the severe drop in Accuracy and the spike in False Positives at the 90\% noise level due to image over-smoothing.}}{16}{figure.caption.9}\protected@file@percent }
+\newlabel{fig:autoencoder_noise}{{15}{16}{Confusion matrices demonstrating the performance degradation of the BD-CeNN Autoencoder hypothesis under varying levels of Gaussian noise. Note the severe drop in Accuracy and the spike in False Positives at the 90\% noise level due to image over-smoothing}{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {13}Conclusion and Future Work}{16}{section.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.1}Expert-Driven Rule Engineering}{16}{subsection.13.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.2}Dataset Diversity and Scale}{17}{subsection.13.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {13.3}Computational Scaling}{17}{subsection.13.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Model Accuracy across increasing levels of Gaussian Noise.}}{18}{table.caption.12}\protected@file@percent }
+\newlabel{tab:noise_accuracy}{{6}{18}{Model Accuracy across increasing levels of Gaussian Noise}{table.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Detailed Noise Robustness Results}{18}{appendix.A}\protected@file@percent }
+\newlabel{sec:appendix_matrices}{{A}{18}{Detailed Noise Robustness Results}{appendix.A}{}}
+\newlabel{fig:sub_resnet}{{16a}{19}{ResNet (Standard)}{figure.caption.13}{}}
+\newlabel{sub@fig:sub_resnet}{{a}{19}{ResNet (Standard)}{figure.caption.13}{}}
+\newlabel{fig:sub_seresnet}{{16b}{19}{SE-ResNet}{figure.caption.13}{}}
+\newlabel{sub@fig:sub_seresnet}{{b}{19}{SE-ResNet}{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance.}}{19}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:noise_comparison_p1}{{16}{19}{Detailed Confusion Matrices across different architectures (Part 1). Performance is monitored from $0\%$ to $90\%$ Gaussian noise variance}{figure.caption.13}{}}
+\newlabel{fig:sub_efficientnet}{{16c}{20}{EfficientNet-B0}{figure.caption.14}{}}
+\newlabel{sub@fig:sub_efficientnet}{{c}{20}{EfficientNet-B0}{figure.caption.14}{}}
+\newlabel{fig:sub_nocenn}{{16d}{20}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
+\newlabel{sub@fig:sub_nocenn}{{d}{20}{Ablation Baseline (DenseNet-121 Without CeNN)}{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 2).}}{20}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:noise_comparison_p2}{{16}{20}{Detailed Confusion Matrices across different architectures (Part 2)}{figure.caption.14}{}}
+\newlabel{fig:sub_nostro}{{16e}{21}{Proposed Hybrid CeNN}{figure.caption.15}{}}
+\newlabel{sub@fig:sub_nostro}{{e}{21}{Proposed Hybrid CeNN}{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Detailed Confusion Matrices across different architectures (Part 3)}}{21}{figure.caption.15}\protected@file@percent }
+\newlabel{fig:noise_comparison_p3}{{16}{21}{Detailed Confusion Matrices across different architectures (Part 3)}{figure.caption.15}{}}
+\bibstyle{elsarticle-num}
+\bibdata{cas-refs}
+\bibcite{densenet}{{1}{}{{}}{{}}}
+\bibcite{CeNN}{{2}{}{{}}{{}}}
+\bibcite{kubakisa20XXnoisy}{{3}{}{{}}{{}}}
+\bibcite{asp}{{4}{}{{}}{{}}}
+\bibcite{rsna-pneumonia-detection-challenge}{{5}{}{{}}{{}}}
+\bibcite{NIH-chest-xray}{{6}{}{{}}{{}}}
+\bibcite{albumentations}{{7}{}{{}}{{}}}
+\bibcite{torchxray}{{8}{}{{}}{{}}}
+\bibcite{cbam}{{9}{}{{}}{{}}}
+\bibcite{gebser2018multishotaspsolvingclingo}{{10}{}{{}}{{}}}
+\bibcite{he2016deep}{{11}{}{{}}{{}}}
+\bibcite{hu2018squeeze}{{12}{}{{}}{{}}}
+\bibcite{tan2019efficientnet}{{13}{}{{}}{{}}}
+\csxdef{lastpage}{22}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\gdef \@abspage@last{22}
