@@ -9,10 +9,9 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score, con
 from tqdm import tqdm
 import torchvision.models as models
 import timm
-from settings import DEVICE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH, ABLATION_MODEL_PATH, RESNET_WEIGHTS, EFFNET_WEIGHTS, SERESNET_WEIGHTS
 
 # Import
-from settings import DEVICE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH, ABLATION_MODEL_PATH
+from settings import DEVICE, CSV_PATH, TRAIN_IMG_PATH, BEST_MODEL_PATH, ABLATION_MODEL_PATH, RESNET_WEIGHTS, EFFNET_WEIGHTS, SERESNET_WEIGHTS
 from dataset import get_dataloaders
 from models import HighResPneumoniaDetector, NoCeNNPneumoniaDetector
 
