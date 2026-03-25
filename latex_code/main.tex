@@ -63,57 +63,43 @@
 \shorttitle{A Neuro-Symbolic Architecture for Pneumonia Detection} 
 \shortauthors{N. Flego et al.} 
 
-% --- Titolo Principale ---
+
 \title[mode = title]{A Neuro-Symbolic Hybrid Architecture for Robust Pneumonia Detection and Localization in Chest X-rays} 
 
-% =======================================================
-% --- Autore 1 (Primo Autore e Corresponding Author) ---
-% =======================================================
+
 \author[1,2]{Nicola Flego}
-\cormark[1] % Indica che sei il corresponding author
-\ead{n1flego@edu.aau.at} % Corretto il refuso n1flego
+\cormark[1] 
+\ead{n1flego@edu.aau.at} 
 \credit{Conceptualization, Software Development, Data Analysis, Writing - Original Draft}
 
-% =======================================================
-% --- Autore 2 ---
-% =======================================================
-\author[1,2]{Filippo Pilutti} % Il [1,2] indica che appartiene a entrambe le affiliazioni (rimuovi il 2 se non serve)
+
+\author[1,2]{Filippo Pilutti} 
 \ead{filippopi@edu.aau.at}
 \credit{Conceptualization, Software Development, Data Analysis}
 
-% =======================================================
-% --- Autore 3 ---
-% =======================================================
+
 \author[1]{Mohamed El Bahnasawi}
 \ead{mohamed.elbahnasawi@aau.at}
 \credit{Supervision}
 
-% =======================================================
-% --- Autore 4 ---
-% =======================================================
+
 \author[1]{Kyandoghere Kyamakya}
 \ead{kyandoghere.kyamakya@aau.at}
 \credit{Supervision}
 
-% =======================================================
-% --- Affiliazioni ---
-% =======================================================
 
-% Affiliazione 1 (Principale)
 \affiliation[1]{organization={University of Klagenfurt (AAU)},
 	addressline={Universitätsstraße 65-67}, 
 	city={Klagenfurt am Wörthersee},
 	postcode={9020}, 
 	country={Austria}}
 
-% Affiliazione 2 (Da usare se un coautore è di un'altra università/ospedale)
 \affiliation[2]{organization={Università degli Studi di Udine (UNIUD)},
 	addressline={Via Palladio, 8}, 
 	city={Udine},
 	postcode={33100}, 
 	country={Italy}}
 
-% --- Note a piè di pagina ---
 \cortext[cor1]{Corresponding author}
 
 % --- Abstract ---
@@ -209,46 +195,49 @@ To improve model generalization and robustness, specifically for the proposed Ce
  \begin{minipage}{\linewidth}
     \centering
     \includegraphics[width=\linewidth]{figs/trasformazioni/result_1_HorizontalFlip_00000514_005.png}
-    \captionof{figure}{Horizontal Flip.} % Comando speciale per la didascalia
+    \captionof{figure}{Horizontal Flip.} 
     \label{fig:hor}
 	 \end{minipage}
- \vspace{1em} % Un po' di aria sotto
+ \vspace{1em} 
 	
  \noindent
  \begin{minipage}{\linewidth}
     \centering
     \includegraphics[width=\linewidth]{figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png}
-    \captionof{figure}{Shift-Scale Rotate.} % Comando speciale per la didascalia
+    \captionof{figure}{Shift-Scale Rotate.}
     \label{fig:shift}
 	 \end{minipage}
- \vspace{1em} % Un po' di aria sotto
-	\item \textbf{Intensity Transformations:} Random Brightness (Fig. \ref{fig:Bright}) and Contrast adjustments (Fig. \ref{fig:contr})
+ \vspace{1em} 
+	\item \textbf{Intensity Transformations:} Random Brightness and Contrast adjustments (Fig. \ref{fig:Bright}) 
 	
  \noindent
  \begin{minipage}{\linewidth}
     \centering
     \includegraphics[width=\linewidth]{figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png}
-    \captionof{figure}{Random Brightness.} % Comando speciale per la didascalia
+    \captionof{figure}{Random Brightness.} 
     \label{fig:Bright}
 	 \end{minipage}
 	
- \noindent
- \begin{minipage}{\linewidth}
-    \centering
-    \includegraphics[width=\linewidth]{figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png}
-    \captionof{figure}{Contrast adjustment.} % Comando speciale per la didascalia
-    \label{fig:contr}
-	 \end{minipage}
 	
-	\item \textbf{Noise Injection:} Gaussian Noise (Fig. \ref{fig:gauss}).
+	\item \textbf{Noise Injection:} Gaussian Noise (Fig. \ref{fig:gauss_noise}) and Gaussian Blur (Fig. \ref{fig:gauss_blur}) .
 	
  \noindent
  \begin{minipage}{\linewidth}
     \centering
     \includegraphics[width=\linewidth]{figs/trasformazioni/result_4_GaussNoise_00001836_050.png}
-    \captionof{figure}{Gaussian noise.} % Comando speciale per la didascalia
-    \label{fig:gauss}
+    \captionof{figure}{Gaussian noise.} 
+    \label{fig:gauss_noise}
 	 \end{minipage}
+ \vspace{1em}
+	 
+\noindent
+\begin{minipage}{\linewidth}
+	\centering
+	\includegraphics[width=\linewidth]{figs/trasformazioni/result_5_GaussianBlur_00005139_000}
+	\captionof{figure}{Gaussian Blur.}
+	\label{fig:gauss_blur}
+\end{minipage}
+\vspace{1em}
 	
 \end{itemize}
 The noise injection steps are particularly relevant to stimulate the dynamic behavior of the CeNN blocks integrated into the model's frontend. The validation set remained unaugmented, undergoing only resizing and normalization.
@@ -261,10 +250,10 @@ The designed system follows a modular pipeline consisting of several distinct st
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{figs/schema_rete.png}
-	\captionof{figure}{Overview of the proposed architecture.} % Comando speciale per la didascalia
+	\captionof{figure}{Overview of the proposed architecture.}
 	\label{fig:schema}
 \end{minipage}
-\vspace{1em} % Un po' di aria sotto
+\vspace{1em} 
 
 \subsection{Cellular Neural Network (CeNN) Frontend}To enhance the feature extraction capabilities at the initial stage of the pipeline, we utilized an adapted bio-inspired \textit{Cellular Neural Network} (CeNN) module. Unlike standard convolutional layers, this block interprets the feature extraction as the evolution of a dynamic system, effectively capturing global radiographic patterns through continuous-time dynamics approximation.
 
@@ -352,7 +341,7 @@ The head outputs a vector $\mathbf{b} = [x, y, w, h]$, representing the top-left
 \end{itemize}
 
 \paragraph{Conditional Inference Strategy}
-%mettere a posto il testo -----------------------------------
+
 It is important to emphasize that the localization output is functionally dependent on the classification result. Since the regression head continuously predicts candidate coordinates regardless of the image content, a logical gating mechanism is applied during the inference phase. The predicted bounding box $\hat{\mathbf{b}}_{loc}$ is considered valid and retained only if the classification probability $\hat{y}_{cls}$ exceeds a specific decision threshold $\tau$. Conversely, if the model predicts the absence of pneumonia ($\hat{y}_{cls} < \tau$), the regression output is discarded/masked. This strategy effectively eliminates false positive localizations in healthy patients.
 	
 \subsection{Qualitative Output Analysis}
@@ -361,16 +350,15 @@ It is important to emphasize that the localization output is functionally depend
 To visually evaluate the performance of the proposed multi-task architecture, sample inference results are presented in Figure \ref{fig:result}.
 The visualizations overlay both the true and predicted bounding boxes on the input chest radiographs to demonstrate the model's localization capabilities. The solid green boxes represent the ground truth annotations. The dashed red boxes denote the predicted localizations generated by the network's regression head.
 
-%The first image exemplifies the practical application of the conditional inference strategy. In this instance, the classification head produced a low confidence score (8.9\%) that fell below the established decision threshold $\tau$. Consequently, the regression output was systematically discarded and masked by the gating mechanism, leaving only the ground truth visible. In the subsequent cases, the classification head successfully identified the pathology with high confidence, triggering the localization branch to output the dashed red predictions, which effectively, in two cases out of three, approximate the true opacity regions.
 	
 \noindent
 \begin{minipage}{\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{figs/ris_rete.png}
-	\captionof{figure}{Example of results.} % Comando speciale per la didascalia
+	\captionof{figure}{Example of results.} 
 	\label{fig:result}
 \end{minipage}
-\vspace{1em} % Un po' di aria sotto
+\vspace{1em} 
 	
 \section{Loss Function and Optimization Objective}
 
@@ -555,7 +543,7 @@ To empirically validate the proposed two-phase optimization strategy and the lay
 \noindent
 \begin{minipage}{\linewidth}
 	\centering
-	\includegraphics[width=\linewidth]{figs/loss_curve_final.png} % Assicurati di rinominare l'immagine o cambiare il path
+	\includegraphics[width=\linewidth]{figs/loss_curve_final.png} 
 	\captionof{figure}{Training and validation loss curves over the epochs. The red dashed line marks the "Unfreeze" point, transitioning from the warmup phase (frozen backbone) to full-network fine-tuning.}
 	\label{fig:loss_curve}
 \end{minipage}

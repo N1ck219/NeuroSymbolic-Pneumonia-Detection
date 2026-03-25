@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.27)  25 MAR 2026 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.2.27)  25 MAR 2026 12:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -880,86 +880,86 @@ Package caption Info: End \AtBeginDocument code.
 \openout4 = `main.abs'.
 
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 133.
+ne 119.
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 133.
+e 119.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 133
+LaTeX Font Info:    Trying to load font information for U+msa on input line 119
 .
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 133
+LaTeX Font Info:    Trying to load font information for U+msb on input line 119
 .
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 133.
+ine 119.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 133.
+e 119.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 133.
+ne 119.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 133.
+e 119.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 133.
+e 119.
 
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-Overfull \hbox (123.62721pt too wide) detected at line 133
+Overfull \hbox (123.62721pt too wide) detected at line 119
 []
  []
 
 (main.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 133.
+Package hyperref Warning: Ignoring empty anchor on input line 119.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 133.
+Package hyperref Warning: Ignoring empty anchor on input line 119.
 
 <thumbnails/cas-email.jpeg, id=3, 225.84375pt x 225.84375pt>
 File: thumbnails/cas-email.jpeg Graphic file (type jpg)
 <use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 133.
+Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 119.
 (pdftex.def)             Requested size: 7.99838pt x 8.0pt.
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 13
-3.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 11
+9.
 (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/inconsolata\t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 133.
+(Font)              scaled to size 6.80005pt on input line 119.
 
 [1{C:/Users/nicol/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ni
 col/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix/stix-t1.enc}
@@ -967,31 +967,31 @@ col/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix/stix-t1.enc}
 
 {C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/inconsolata/i4-t1
 -0.enc} <./thumbnails/cas-email.jpeg>]
-Underfull \hbox (badness 1142) in paragraph at lines 158--159
+Underfull \hbox (badness 1142) in paragraph at lines 144--145
 \T1/stix/m/n/10 bi-liz-ing the in-put sig-nal be-fore deep fea-ture ex-trac-tio
 n,
  []
 
 
-Underfull \hbox (badness 1796) in paragraph at lines 166--167
+Underfull \hbox (badness 1796) in paragraph at lines 152--153
 []\T1/stix/m/n/10 The model was de-vel-oped and eval-u-ated us-ing the
  []
 
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 168.
+(Font)              scaled to size 8.50006pt on input line 154.
 <figs/class_distribution.png, id=24, 566.5968pt x 422.0568pt>
 File: figs/class_distribution.png Graphic file (type png)
 <use figs/class_distribution.png>
-Package pdftex.def Info: figs/class_distribution.png  used on input line 182.
+Package pdftex.def Info: figs/class_distribution.png  used on input line 168.
 (pdftex.def)             Requested size: 238.25444pt x 177.47516pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 183.
+(caption)                particular \caption on input line 169.
 See the caption package documentation for explanation.
 
 [2]
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-191.
+177.
  (C:\Users\nicol\AppData\Local\Programs\MiKTeX\tex/latex/stix\ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
@@ -1001,12 +1001,12 @@ File: figs/trasformazioni/result_1_HorizontalFlip_00000514_005.png Graphic file
  (type png)
 <use figs/trasformazioni/result_1_HorizontalFlip_00000514_005.png>
 Package pdftex.def Info: figs/trasformazioni/result_1_HorizontalFlip_00000514_0
-05.png  used on input line 211.
+05.png  used on input line 197.
 (pdftex.def)             Requested size: 213.25441pt x 106.6249pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 212.
+(caption)                particular \caption on input line 198.
 See the caption package documentation for explanation.
 
 <figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png, id=46, 722.7pt
@@ -1015,41 +1015,24 @@ File: figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png Graphic fi
 le (type png)
 <use figs/trasformazioni/result_2_ShiftScaleRotate_00005666_016.png>
 Package pdftex.def Info: figs/trasformazioni/result_2_ShiftScaleRotate_00005666
-_016.png  used on input line 220.
+_016.png  used on input line 206.
 (pdftex.def)             Requested size: 213.25441pt x 106.6249pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 221.
+(caption)                particular \caption on input line 207.
 See the caption package documentation for explanation.
 
-
-Overfull \hbox (2.03801pt too wide) in paragraph at lines 225--226
-[]\T1/stix/b/n/10 Intensity Trans-for-ma-tions: \T1/stix/m/n/10 Ran-dom Bright-
-ness (Fig.
- []
-
-<figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png, id=49,
+<figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png, id=48,
  722.7pt x 361.35pt>
 File: figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png Gr
 aphic file (type png)
 <use figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png>
 Package pdftex.def Info: figs/trasformazioni/result_3_RandomBrightnessContrast_
-00008027_009.png  used on input line 230.
+00008027_009.png  used on input line 216.
 (pdftex.def)             Requested size: 213.25441pt x 106.6249pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 231.
-See the caption package documentation for explanation.
-
-File: figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png Gr
-aphic file (type png)
-<use figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009.png>
-Package pdftex.def Info: figs/trasformazioni/result_3_RandomBrightnessContrast_
-00008027_009.png  used on input line 238.
-(pdftex.def)             Requested size: 213.25441pt x 106.6249pt.
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 239.
+(caption)                particular \caption on input line 217.
 See the caption package documentation for explanation.
 
 <figs/trasformazioni/result_4_GaussNoise_00001836_050.png, id=51, 722.7pt x 361
@@ -1058,102 +1041,115 @@ File: figs/trasformazioni/result_4_GaussNoise_00001836_050.png Graphic file (ty
 pe png)
 <use figs/trasformazioni/result_4_GaussNoise_00001836_050.png>
 Package pdftex.def Info: figs/trasformazioni/result_4_GaussNoise_00001836_050.p
-ng  used on input line 248.
+ng  used on input line 227.
 (pdftex.def)             Requested size: 213.25441pt x 106.6249pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 249.
+(caption)                particular \caption on input line 228.
+See the caption package documentation for explanation.
+
+<figs/trasformazioni/result_5_GaussianBlur_00005139_000.png, id=52, 722.7pt x 3
+61.35pt>
+File: figs/trasformazioni/result_5_GaussianBlur_00005139_000.png Graphic file (
+type png)
+<use figs/trasformazioni/result_5_GaussianBlur_00005139_000.png>
+Package pdftex.def Info: figs/trasformazioni/result_5_GaussianBlur_00005139_000
+.png  used on input line 236.
+(pdftex.def)             Requested size: 213.25441pt x 106.6249pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 237.
 See the caption package documentation for explanation.
 
 [3{C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix/stix-ts1.e
 nc} <./figs/class_distribution.png> <./figs/trasformazioni/result_1_HorizontalF
 lip_00000514_005.png> <./figs/trasformazioni/result_2_ShiftScaleRotate_00005666
 _016.png> <./figs/trasformazioni/result_3_RandomBrightnessContrast_00008027_009
-.png>]
-Underfull \hbox (badness 1436) in paragraph at lines 254--255
+.png> <./figs/trasformazioni/result_4_GaussNoise_00001836_050.png>]
+Underfull \hbox (badness 1436) in paragraph at lines 243--244
 \T1/stix/m/n/10 into the model's fron-tend. The val-i-da-tion set re-mained
  []
 
-<figs/schema_rete.png, id=72, 2826.56pt x 1541.76pt>
+<figs/schema_rete.png, id=74, 2826.56pt x 1541.76pt>
 File: figs/schema_rete.png Graphic file (type png)
 <use figs/schema_rete.png>
-Package pdftex.def Info: figs/schema_rete.png  used on input line 263.
+Package pdftex.def Info: figs/schema_rete.png  used on input line 252.
 (pdftex.def)             Requested size: 238.25444pt x 129.95393pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 264.
+(caption)                particular \caption on input line 253.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 271--271
+Underfull \hbox (badness 1168) in paragraph at lines 260--260
 \T1/stix/m/it/10 forward \T1/stix/m/n/10 tem-plates (con-vo-lu-tional ker-nels)
 , re-spec-
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 277.
-[4 <./figs/trasformazioni/result_4_GaussNoise_00001836_050.png> <./figs/schema_
-rete.png>]
-Underfull \hbox (badness 1082) in paragraph at lines 296--297
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 266.
+[4 <./figs/trasformazioni/result_5_GaussianBlur_00005139_000.png> <./figs/schem
+a_rete.png>]
+Underfull \hbox (badness 1082) in paragraph at lines 285--286
 []\T1/stix/m/n/10 A key com-po-nent of our ap-proach is the ini-tial-iza-
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 296--297
+Underfull \hbox (badness 1158) in paragraph at lines 285--286
 \T1/stix/m/n/10 on Im-a-geNet (nat-u-ral im-ages), we uti-lize weights from
  []
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 298--299
+Underfull \hbox (badness 1052) in paragraph at lines 287--288
 \T1/stix/m/n/10 and patho-log-i-cal tex-tures upon ini-tial-iza-tion. This lead
 s
  []
 
 
-Overfull \hbox (0.47554pt too wide) in paragraph at lines 302--302
+Overfull \hbox (0.47554pt too wide) in paragraph at lines 291--291
 []\T1/stix/m/n/10 The Chan-nel At-ten-tion Mod-ule ex-ploits the inter-channel
  []
 
 
-Underfull \hbox (badness 1043) in paragraph at lines 302--303
+Underfull \hbox (badness 1043) in paragraph at lines 291--292
 \T1/stix/m/n/10 pool-ing strate-gies al-lows the net-work to pre-serve back-
  []
 
 [5]
-<figs/ris_rete.png, id=113, 858.5676pt x 860.013pt>
+<figs/ris_rete.png, id=115, 858.5676pt x 860.013pt>
 File: figs/ris_rete.png Graphic file (type png)
 <use figs/ris_rete.png>
-Package pdftex.def Info: figs/ris_rete.png  used on input line 369.
+Package pdftex.def Info: figs/ris_rete.png  used on input line 357.
 (pdftex.def)             Requested size: 238.25444pt x 238.64987pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 370.
+(caption)                particular \caption on input line 358.
 See the caption package documentation for explanation.
 
 [6]
-Underfull \hbox (badness 1360) in paragraph at lines 400--401
+Underfull \hbox (badness 1360) in paragraph at lines 388--389
 []\T1/stix/m/n/10 The lo-cal-iza-tion branch poses a re-gres-sion prob-lem
  []
 
 [7 <./figs/ris_rete.png>]
-Underfull \hbox (badness 1436) in paragraph at lines 435--436
+Underfull \hbox (badness 1436) in paragraph at lines 423--424
 []\T1/stix/m/n/10 The in-te-gra-tion fol-lows a Neuro-Symbolic ap-proach
  []
 
 
-Overfull \hbox (1.99553pt too wide) in paragraph at lines 435--436
+Overfull \hbox (1.99553pt too wide) in paragraph at lines 423--424
 \T1/stix/m/n/10 where the sub-symbolic sys-tem (the CeNN-DenseNet model)
  []
 
 
-Overfull \hbox (16.80617pt too wide) in paragraph at lines 444--445
+Overfull \hbox (16.80617pt too wide) in paragraph at lines 432--433
 []\T1/stix/m/n/10 Formally, a pre-dic-tion char-ac-ter-ized by ge-om-e-try $\LS
 1/stix/m/n/10 .\LS1/stix/m/it/10 x; y; w; h\LS1/stix/m/n/10 /$\T1/stix/m/n/10 ,
 
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 455--457
+Underfull \hbox (badness 1275) in paragraph at lines 443--445
 \T1/stix/m/n/10 a foun-da-tional set of Neg-a-tive Con-straints (in-val-i-da-ti
 on
  []
@@ -1166,202 +1162,202 @@ File: lstlang2.sty 2025/11/14 1.11b listings language file
 )
 
 LaTeX Font Warning: Font shape `T1/zi4/m/it' undefined
-(Font)              using `T1/zi4/m/n' instead on input line 462.
+(Font)              using `T1/zi4/m/n' instead on input line 450.
 
 LaTeX Font Info:    Font shape `T1/zi4/m/it' will be
-(Font)              scaled to size 6.80005pt on input line 462.
+(Font)              scaled to size 6.80005pt on input line 450.
 LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
-(Font)              scaled to size 6.80005pt on input line 481.
+(Font)              scaled to size 6.80005pt on input line 469.
 [8]
-Underfull \hbox (badness 1540) in paragraph at lines 521--522
+Underfull \hbox (badness 1540) in paragraph at lines 509--510
 []\T1/stix/m/n/10 To lever-age the rich fea-ture rep-re-sen-ta-tions learned
  []
 
 
-Underfull \hbox (badness 1533) in paragraph at lines 521--522
+Underfull \hbox (badness 1533) in paragraph at lines 509--510
 \T1/stix/m/n/10 bone was ini-tial-ized with pre-trained weights from the
  []
 
 
-Underfull \hbox (badness 1097) in paragraph at lines 521--522
+Underfull \hbox (badness 1097) in paragraph at lines 509--510
 \T1/stix/m/n/10 are de-stroyed by the ini-tially large and noisy gra-di-ents
  []
 
 
-Overfull \hbox (10.90555pt too wide) in paragraph at lines 525--526
+Overfull \hbox (10.90555pt too wide) in paragraph at lines 513--514
 \T1/stix/m/n/10 ver-sally ap-pli-ca-ble across dif-fer-ent ra-dio-graphic datas
 ets. 
  []
 
 [9]
-<figs/loss_curve_final.png, id=202, 621.82312pt x 339.51843pt>
+<figs/loss_curve_final.png, id=204, 621.82312pt x 339.51843pt>
 File: figs/loss_curve_final.png Graphic file (type png)
 <use figs/loss_curve_final.png>
-Package pdftex.def Info: figs/loss_curve_final.png  used on input line 558.
+Package pdftex.def Info: figs/loss_curve_final.png  used on input line 546.
 (pdftex.def)             Requested size: 238.25444pt x 130.08554pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 559.
+(caption)                particular \caption on input line 547.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1515) in paragraph at lines 559--559
+Underfull \hbox (badness 1515) in paragraph at lines 547--547
 []\T1/stix/m/n/10 Figure 9: |[]Training and val-i-da-tion loss curves over the
  []
 
 
-Overfull \hbox (2.80234pt too wide) in alignment at lines 579--590
+Overfull \hbox (2.80234pt too wide) in alignment at lines 567--578
 [] [] [] [] [] 
  []
 
-<figs/risultati.png, id=204, 434.3427pt x 326.6604pt>
+<figs/risultati.png, id=206, 434.3427pt x 326.6604pt>
 File: figs/risultati.png Graphic file (type png)
 <use figs/risultati.png>
-Package pdftex.def Info: figs/risultati.png  used on input line 598.
+Package pdftex.def Info: figs/risultati.png  used on input line 586.
 (pdftex.def)             Requested size: 238.25444pt x 179.19025pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 599.
+(caption)                particular \caption on input line 587.
 See the caption package documentation for explanation.
 
-<figs/risultati_0.4.png, id=205, 434.3427pt x 326.6604pt>
+<figs/risultati_0.4.png, id=207, 434.3427pt x 326.6604pt>
 File: figs/risultati_0.4.png Graphic file (type png)
 <use figs/risultati_0.4.png>
-Package pdftex.def Info: figs/risultati_0.4.png  used on input line 607.
+Package pdftex.def Info: figs/risultati_0.4.png  used on input line 595.
 (pdftex.def)             Requested size: 238.25444pt x 179.19025pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 608.
+(caption)                particular \caption on input line 596.
 See the caption package documentation for explanation.
 
 [10 <./figs/loss_curve_final.png (PNG copy)> <./figs/risultati.png>]
-Underfull \hbox (badness 1210) in paragraph at lines 615--616
+Underfull \hbox (badness 1210) in paragraph at lines 603--604
 []\T1/stix/m/n/10 This ad-just-ment is par-tic-u-larly cru-cial in a med-i-cal
  []
 
-<figs/conf_matr_asp/Conf_20.png, id=221, 1003.8303pt x 353.4003pt>
+<figs/conf_matr_asp/Conf_20.png, id=223, 1003.8303pt x 353.4003pt>
 File: figs/conf_matr_asp/Conf_20.png Graphic file (type png)
 <use figs/conf_matr_asp/Conf_20.png>
-Package pdftex.def Info: figs/conf_matr_asp/Conf_20.png  used on input line 639
+Package pdftex.def Info: figs/conf_matr_asp/Conf_20.png  used on input line 627
 .
 (pdftex.def)             Requested size: 238.25444pt x 83.87411pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 640.
+(caption)                particular \caption on input line 628.
 See the caption package documentation for explanation.
 
 [11 <./figs/risultati_0.4.png>]
-<figs/conf_matr_asp/Conf_29.png, id=233, 1003.8303pt x 353.4003pt>
+<figs/conf_matr_asp/Conf_29.png, id=235, 1003.8303pt x 353.4003pt>
 File: figs/conf_matr_asp/Conf_29.png Graphic file (type png)
 <use figs/conf_matr_asp/Conf_29.png>
-Package pdftex.def Info: figs/conf_matr_asp/Conf_29.png  used on input line 653
+Package pdftex.def Info: figs/conf_matr_asp/Conf_29.png  used on input line 641
 .
 (pdftex.def)             Requested size: 238.25444pt x 83.87411pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 654.
+(caption)                particular \caption on input line 642.
 See the caption package documentation for explanation.
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 684--685
+Underfull \hbox (badness 1565) in paragraph at lines 672--673
 []\T1/stix/m/n/10 Visual lo-cal-iza-tion and ro-bust im-age recog-ni-tion in
  []
 
 
-Overfull \hbox (3.95804pt too wide) in paragraph at lines 689--690
+Overfull \hbox (3.95804pt too wide) in paragraph at lines 677--678
 []\T1/stix/b/n/10 DenseNet-121 (Ab-la-tion Base-line)\T1/stix/m/n/10 : The iso-
 lated back-
  []
 
 
-Overfull \hbox (12.61209pt too wide) in paragraph at lines 698--699
+Overfull \hbox (12.61209pt too wide) in paragraph at lines 686--687
 \T1/stix/m/n/10 dis-tinc-tion must be made. ResNet, SE-ResNet, and EfficientNet
 -
  []
 
 
-Underfull \hbox (badness 1810) in paragraph at lines 698--699
+Underfull \hbox (badness 1810) in paragraph at lines 686--687
 \T1/stix/m/n/10 B0 act as ded-i-cated single-task clas-si-fiers. In con-trast,
  []
 
 
-Underfull \hbox (badness 1502) in paragraph at lines 698--699
+Underfull \hbox (badness 1502) in paragraph at lines 686--687
 \T1/stix/m/n/10 two com-plex spa-tial and se-man-tic tasks with a shared
  []
 
 [12 <./figs/conf_matr_asp/Conf_20.png> <./figs/conf_matr_asp/Conf_29.png>]
-Underfull \hbox (badness 2343) in paragraph at lines 719--720
+Underfull \hbox (badness 2343) in paragraph at lines 707--708
 []\T1/stix/m/n/10 Conversely, SE-ResNet and EfficientNet-B0 demon-
  []
 
 
-Underfull \hbox (badness 1762) in paragraph at lines 719--720
+Underfull \hbox (badness 1762) in paragraph at lines 707--708
 \T1/stix/m/n/10 strate strong in-her-ent re-silience, main-tain-ing ac-cu-ra-ci
 es
  []
 
-<figs/conf_matr_noise/line_chart_zoomed.png, id=258, 859.7721pt x 498.663pt>
+<figs/conf_matr_noise/line_chart_zoomed.png, id=260, 859.7721pt x 498.663pt>
 File: figs/conf_matr_noise/line_chart_zoomed.png Graphic file (type png)
 <use figs/conf_matr_noise/line_chart_zoomed.png>
 Package pdftex.def Info: figs/conf_matr_noise/line_chart_zoomed.png  used on in
-put line 726.
+put line 714.
 (pdftex.def)             Requested size: 238.25444pt x 138.18658pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 727.
+(caption)                particular \caption on input line 715.
 See the caption package documentation for explanation.
 
 [13 <./figs/conf_matr_noise/line_chart_zoomed.png>]
-Underfull \hbox (badness 1824) in paragraph at lines 739--740
+Underfull \hbox (badness 1824) in paragraph at lines 727--728
 []\T1/stix/m/n/10 To ac-cu-rately sim-u-late a de-ploy-ment sce-nario in a
  []
 
 
-Overfull \hbox (0.32385pt too wide) in paragraph at lines 741--742
+Overfull \hbox (0.32385pt too wide) in paragraph at lines 729--730
 \T1/stix/m/n/10 symbolic neu-ral net-work (CeNN + DenseNet + MTL Heads)
  []
 
 
-Underfull \hbox (badness 1248) in paragraph at lines 763--763
+Underfull \hbox (badness 1248) in paragraph at lines 751--751
 []\T1/cmss/m/n/9 Computational time break-down for the com-plete Neuro-
  []
 
 
-Overfull \hbox (0.76303pt too wide) in alignment at lines 765--777
+Overfull \hbox (0.76303pt too wide) in alignment at lines 753--765
 [] [] 
  []
 
 [14]
-Underfull \hbox (badness 1142) in paragraph at lines 829--830
+Underfull \hbox (badness 1142) in paragraph at lines 817--818
 []\T1/stix/m/n/10 A no-table lim-i-ta-tion of the cur-rent Neuro-Symbolic
  []
 
 [15]
-<figs/autoencoder_noise.png, id=296, 1293.633pt x 704.6325pt>
+<figs/autoencoder_noise.png, id=298, 1293.633pt x 704.6325pt>
 File: figs/autoencoder_noise.png Graphic file (type png)
 <use figs/autoencoder_noise.png>
-Package pdftex.def Info: figs/autoencoder_noise.png  used on input line 852.
+Package pdftex.def Info: figs/autoencoder_noise.png  used on input line 840.
 (pdftex.def)             Requested size: 445.05496pt x 242.41035pt.
 
-Overfull \hbox (2.20634pt too wide) in paragraph at lines 862--863
+Overfull \hbox (2.20634pt too wide) in paragraph at lines 850--851
 []\T1/stix/m/n/10 In this pa-per, we pre-sented a novel hy-brid neuro-symbolic
  []
 
 
-Underfull \hbox (badness 1005) in paragraph at lines 862--863
+Underfull \hbox (badness 1005) in paragraph at lines 850--851
 \T1/stix/m/n/10 stan-dard con-vo-lu-tional net-works, namely, their sus-cep-ti-
 
  []
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 864--865
+Underfull \hbox (badness 1033) in paragraph at lines 852--853
 []\T1/stix/m/n/10 Our ex-per-i-men-tal eval-u-a-tions val-i-dated the core hy-
  []
 
 
-Underfull \hbox (badness 1082) in paragraph at lines 864--865
+Underfull \hbox (badness 1082) in paragraph at lines 852--853
 \T1/stix/m/n/10 pa-ram-e-ter-ized, single-task ar-chi-tec-tures like ResNet and
 
  []
@@ -1369,12 +1365,12 @@ Underfull \hbox (badness 1082) in paragraph at lines 864--865
 [16 <./figs/autoencoder_noise.png>] [17
 
 ]
-Overfull \hbox (0.66635pt too wide) in paragraph at lines 888--889
+Overfull \hbox (0.66635pt too wide) in paragraph at lines 876--877
 []\T1/stix/m/n/10 Due to file size con-straints, the pre-trained model weights
  []
 
 
-Underfull \hbox (badness 1264) in paragraph at lines 888--889
+Underfull \hbox (badness 1264) in paragraph at lines 876--877
 \T1/stix/m/n/10 the in-fer-ence and noise ro-bust-ness tests are thor-oughly
  []
 
@@ -1409,7 +1405,7 @@ Underfull \hbox (badness 3601) in paragraph at lines 44--50
 ]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 913.
+(caption)                particular \caption on input line 901.
 See the caption package documentation for explanation.
 
 CUTED [- LAST -]
@@ -1429,39 +1425,39 @@ CUTED [rightcolumn badness]: 0
 
 
 ]
-<figs/conf_matr_noise/ResNet50_CM.png, id=360, 1293.1512pt x 740.0448pt>
+<figs/conf_matr_noise/ResNet50_CM.png, id=362, 1293.1512pt x 740.0448pt>
 File: figs/conf_matr_noise/ResNet50_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/ResNet50_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/ResNet50_CM.png  used on input li
-ne 939.
+ne 927.
 (pdftex.def)             Requested size: 420.33556pt x 240.54558pt.
-<figs/conf_matr_noise/SE-ResNet50_CM.png, id=361, 1293.1512pt x 740.0448pt>
+<figs/conf_matr_noise/SE-ResNet50_CM.png, id=363, 1293.1512pt x 740.0448pt>
 File: figs/conf_matr_noise/SE-ResNet50_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/SE-ResNet50_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/SE-ResNet50_CM.png  used on input
- line 947.
+ line 935.
 (pdftex.def)             Requested size: 420.33556pt x 240.54558pt.
-<figs/conf_matr_noise/EfficientNet-B0_CM.png, id=362, 1293.1512pt x 740.0448pt>
+<figs/conf_matr_noise/EfficientNet-B0_CM.png, id=364, 1293.1512pt x 740.0448pt>
 
 File: figs/conf_matr_noise/EfficientNet-B0_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/EfficientNet-B0_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/EfficientNet-B0_CM.png  used on i
-nput line 962.
+nput line 950.
 (pdftex.def)             Requested size: 420.33556pt x 240.54558pt.
-<figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png, id=363, 1293.1512pt x 74
+<figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png, id=365, 1293.1512pt x 74
 0.0448pt>
 File: figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png Graphic file (type p
 ng)
 <use figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/Ablation_Model_(No_CeNN)_CM.png  
-used on input line 970.
+used on input line 958.
 (pdftex.def)             Requested size: 420.33556pt x 240.54558pt.
-<figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png, id=364, 1293.1512pt x 740.04
+<figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png, id=366, 1293.1512pt x 740.04
 48pt>
 File: figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png Graphic file (type png)
 <use figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png>
 Package pdftex.def Info: figs/conf_matr_noise/Proposed_Hybrid_CeNN_CM.png  used
- on input line 985.
+ on input line 973.
 (pdftex.def)             Requested size: 420.33556pt x 240.54558pt.
  [21 <./figs/conf_matr_noise/ResNet50_CM.png> <./figs/conf_matr_noise/SE-ResNet
 50_CM.png>] [22 <./figs/conf_matr_noise/EfficientNet-B0_CM.png> <./figs/conf_ma
@@ -1479,10 +1475,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20554 strings out of 467867
- 319294 string characters out of 5418334
- 1128615 words of memory out of 5000000
- 48939 multiletter control sequences out of 15000+600000
+ 20565 strings out of 467867
+ 320007 string characters out of 5418334
+ 1128658 words of memory out of 5000000
+ 48950 multiletter control sequences out of 15000+600000
  748056 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  90i,18n,117p,1459b,1329s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1505,9 +1501,9 @@ ers/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mathrm.pfb
 ><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/stix-mat
 hscr.pfb><C:/Users/nicol/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix/
 stix-mathsf.pfb>
-Output written on main.pdf (23 pages, 9645730 bytes).
+Output written on main.pdf (23 pages, 9941919 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
+ 611 PDF objects out of 1000 (max. 8388607)
  179 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
