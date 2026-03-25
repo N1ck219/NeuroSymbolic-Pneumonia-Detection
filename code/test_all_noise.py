@@ -5,7 +5,8 @@ import torch.nn as nn
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.metrics import precision_recall_fscore_support, accuracy_score, confusion_matrix
+import pandas as pd 
+from sklearn.metrics import precision_recall_fscore_support, accuracy_score, confusion_matrix, roc_auc_score, matthews_corrcoef
 from tqdm import tqdm
 import torchvision.models as models
 import timm
@@ -31,35 +32,28 @@ def add_noise(img_tensor, noise_factor):
     return torch.clamp(img_tensor + noise, 0.0, 1.0)
 
 if __name__ == "__main__":
-    # Dataloader
     _, val_loader = get_dataloaders(CSV_PATH, TRAIN_IMG_PATH)
     
     # --- 2. MODELS ---
     models_to_test = []
 
-    # A. ResNet50
     resnet = models.resnet50(weights=None)
     resnet.conv1 = nn.Conv2d(1, 64, kernel_size=7, stride=2, padding=3, bias=False)
     resnet.fc = nn.Linear(resnet.fc.in_features, 1)
     models_to_test.append({"name": "ResNet50", "model": resnet, "path": RESNET_WEIGHTS, "thresh": 0.50})
     
-    # B. EfficientNet-B0
     effnet = timm.create_model('efficientnet_b0', pretrained=False, in_chans=1, num_classes=1)
     models_to_test.append({"name": "EfficientNet-B0", "model": effnet, "path": EFFNET_WEIGHTS, "thresh": 0.50})
 
-    # C. SE-ResNet50
     seresnet = timm.create_model('seresnet50', pretrained=False, in_chans=1, num_classes=1)
     models_to_test.append({"name": "SE-ResNet50", "model": seresnet, "path": SERESNET_WEIGHTS, "thresh": 0.50})
 
-    # D. Ablation Study (Without CeNN)
     no_cenn = NoCeNNPneumoniaDetector()
     models_to_test.append({"name": "Ablation Model (No CeNN)", "model": no_cenn, "path": ABLATION_MODEL_PATH, "thresh": 0.40})
 
-    # E. Proposed Model (With CeNN)
     hybrid = HighResPneumoniaDetector()
     models_to_test.append({"name": "Proposed Hybrid CeNN", "model": hybrid, "path": BEST_MODEL_PATH, "thresh": 0.40})
 
-    # Structure to save aggregated results
     all_results = {}
 
     # --- 3. LOOP MODELS ---
@@ -78,10 +72,8 @@ if __name__ == "__main__":
             continue
             
         model.eval()
+        results = {'noise': [], 'accuracy': [], 'recall': [], 'precision': [], 'f1': [], 'specificity': [], 'auc': [], 'mcc': []}
         
-        results = {'noise': [], 'accuracy': [], 'recall': [], 'precision': [], 'f1': []}
-        
-        # Setup Confusion Matrix Plot
         fig_cm, axes_cm = plt.subplots(2, 3, figsize=(18, 10))
         fig_cm.suptitle(model_name, fontsize=22, fontweight='bold', y=1.02)
         axes_cm = axes_cm.flatten()
@@ -91,19 +83,16 @@ if __name__ == "__main__":
                 all_probs, all_targets = [], []
                 loop = tqdm(val_loader, desc=f"Noise {int(noise_lvl*100):02d}%", leave=False, dynamic_ncols=True)
                 
-                # Note: the dataloader returns (imgs, targets, boxes)
                 for batch_data in loop:
                     clean_imgs_batch = batch_data[0]
                     targets = batch_data[1].to(DEVICE)
                     
                     noisy_input = add_noise(clean_imgs_batch, noise_lvl).to(DEVICE)
                     
-                    # --- TTA Pass 1 (Normal) ---
                     out_1 = model(noisy_input)
                     cls_1 = out_1[0] if isinstance(out_1, tuple) else out_1
                     prob_1 = torch.sigmoid(cls_1)
                     
-                    # --- TTA Pass 2 (Flipped) ---
                     flipped_input = torch.flip(noisy_input, [3])
                     out_2 = model(flipped_input)
                     cls_2 = out_2[0] if isinstance(out_2, tuple) else out_2
@@ -116,45 +105,49 @@ if __name__ == "__main__":
                     
                 all_probs = torch.cat(all_probs).numpy()
                 all_targets = torch.cat(all_targets).numpy()
-                
                 preds = (all_probs > chosen_thresh).astype(int)
                 
                 acc = accuracy_score(all_targets, preds)
                 p, r, f1, _ = precision_recall_fscore_support(all_targets, preds, average=None, zero_division=0)
+                auc = roc_auc_score(all_targets, all_probs)
+                mcc = matthews_corrcoef(all_targets, preds)
                 
-                p_mal, r_mal, f1_mal = p[1], r[1], f1[1]
+                cm = confusion_matrix(all_targets, preds)
+                tn, fp, fn, tp = cm.ravel()
+                specificity = tn / (tn + fp) if (tn + fp) > 0 else 0
                 
                 results['noise'].append(noise_lvl * 100)
                 results['accuracy'].append(acc)
-                results['recall'].append(r_mal)
-                results['precision'].append(p_mal)
-                results['f1'].append(f1_mal)
+                results['recall'].append(r[1])
+                results['precision'].append(p[1])
+                results['f1'].append(f1[1])
+                results['specificity'].append(specificity)
+                results['auc'].append(auc)
+                results['mcc'].append(mcc)
                 
-                cm = confusion_matrix(all_targets, preds)
                 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=axes_cm[idx], cbar=False, annot_kws={"size": 16},
                             xticklabels=['Healthy', 'Pneumonia'], yticklabels=['True: Healthy', 'True: Pneumonia'])
                 
-                axes_cm[idx].set_title(f"Noise: {int(noise_lvl*100)}%\nAcc: {acc:.1%}", fontsize=16, fontweight='bold')
+                axes_cm[idx].set_title(f"Noise: {int(noise_lvl*100)}%\nAcc: {acc:.1%} | F1: {f1[1]:.2f}", fontsize=14, fontweight='bold')
                 
                 if idx % 3 != 0:
                     axes_cm[idx].set_ylabel('')
                     axes_cm[idx].set_yticks([])
 
-        # Saving Confusion Matrix
         plt.tight_layout()
         save_path_cm = os.path.join(SAVE_DIR, f"{model_name.replace(' ', '_')}_CM.png")
         plt.savefig(save_path_cm, bbox_inches='tight', dpi=150)
         plt.close()
-        print(f"[OK] Saved {save_path_cm}")
 
-        # Saving Line Plot (Accuracy and Recall) for the single model
-        plt.figure(figsize=(8, 5))
+        plt.figure(figsize=(10, 6))
         plt.plot(results['noise'], results['accuracy'], marker='o', color='blue', linewidth=2, label='Accuracy')
         plt.plot(results['noise'], results['recall'], marker='s', color='red', linestyle='--', linewidth=2, label='Recall')
-        plt.title(f"Degradation - {model_name}", fontsize=14, fontweight='bold')
+        plt.plot(results['noise'], results['f1'], marker='^', color='green', linestyle=':', linewidth=2, label='F1-Score')
+        plt.plot(results['noise'], results['specificity'], marker='d', color='purple', linestyle='-.', linewidth=2, label='Specificity')
+        plt.title(f"Degradation Analysis - {model_name}", fontsize=14, fontweight='bold')
         plt.xlabel("Gaussian Noise (%)")
         plt.ylabel("Score")
-        plt.ylim(0.0, 1.0)
+        plt.ylim(0.0, 1.05)
         plt.legend()
         plt.grid(True, linestyle='--', alpha=0.6)
         
@@ -164,8 +157,30 @@ if __name__ == "__main__":
         
         all_results[model_name] = results
         
-        # Clear GPU memory
         del model
         torch.cuda.empty_cache()
 
-    print("\n[SUCCESS] All images have been saved in:", SAVE_DIR)
+    # --- 4. EXPORT NUMERICAL RESULTS TO CSV ---
+    flat_results = []
+    for model_name, res in all_results.items():
+        for i in range(len(res['noise'])):
+            flat_results.append({
+                'Model': model_name,
+                'Noise (%)': res['noise'][i],
+                'Accuracy': res['accuracy'][i],
+                'Precision': res['precision'][i],
+                'Recall': res['recall'][i],
+                'F1-Score': res['f1'][i],
+                'Specificity': res['specificity'][i],
+                'AUC-ROC': res['auc'][i],
+                'MCC': res['mcc'][i]
+            })
+            
+    df_noise = pd.DataFrame(flat_results)
+    df_noise = df_noise.round(4) # Arrotonda a 4 decimali
+    
+    csv_filename = os.path.join(SAVE_DIR, "noise_robustness_metrics.csv")
+    df_noise.to_csv(csv_filename, index=False, sep=';', decimal=',')
+    
+    print("\n[SUCCESS] All images saved.")
+    print(f"[SUCCESS] Numerical tabular data exported to: {csv_filename}")
